@@ -1,49 +1,90 @@
-import React from 'react';
-import { Zap, Thermometer } from 'lucide-react';
+'use client';
+
+import Link from 'next/link';
+import { ArrowRight, AlertTriangle, Zap, Info } from 'lucide-react';
 
 interface HardwarePairWidgetProps {
+    icon?: 'warning' | 'bolt' | 'info';
     title: string;
+    description: string;
+    recommendation?: string;
     productName: string;
-    imageUrl: string;
-    linkUrl: string;
+    productImage?: string;
+    ctaText: string;
+    ctaUrl: string;
 }
 
 export default function HardwarePairWidget({
+    icon = 'bolt',
     title,
+    description,
+    recommendation,
     productName,
-    imageUrl, // In real app use Next.js Image
-    linkUrl
+    productImage,
+    ctaText,
+    ctaUrl,
 }: HardwarePairWidgetProps) {
+    const IconComponent = {
+        warning: AlertTriangle,
+        bolt: Zap,
+        info: Info,
+    }[icon];
+
+    const iconColors = {
+        warning: 'text-amber-500',
+        bolt: 'text-violet-500',
+        info: 'text-sky-500',
+    }[icon];
+
     return (
-        <div className="my-10 p-4 border border-yellow-200 bg-yellow-50 rounded-lg flex flex-col sm:flex-row items-center gap-4 shadow-sm">
-            <div className="p-3 bg-white rounded-full text-yellow-600 shadow-sm shrink-0">
-                <Zap size={24} strokeWidth={2.5} />
-            </div>
-
-            <div className="flex-1 text-center sm:text-left">
-                <p className="text-sm font-bold text-yellow-800 uppercase tracking-wide mb-1 flex items-center justify-center sm:justify-start gap-2">
-                    ⚠️ Potencialize o Resultado
-                </p>
-                <p className="text-gray-700 text-sm leading-snug">
+        <div className="bg-gray-50 rounded-2xl border-2 border-dashed border-gray-300 p-5 my-6 relative overflow-hidden">
+            {/* Header */}
+            <div className="flex items-center gap-2 mb-4">
+                <IconComponent size={20} className={`${iconColors} animate-pulse`} />
+                <h4 className="font-bold text-sm uppercase tracking-wide text-violet-700">
                     {title}
-                </p>
+                </h4>
             </div>
 
-            <div className="flex items-center gap-3 bg-white p-2 rounded-lg border border-gray-100 shadow-sm shrink-0 w-full sm:w-auto">
-                <div className="w-12 h-12 bg-gray-200 rounded-md overflow-hidden relative shrink-0">
-                    {/* Placeholder for image */}
-                    {imageUrl ? (
-                        <img src={imageUrl} alt={productName} className="w-full h-full object-cover" />
-                    ) : (
-                        <div className="w-full h-full bg-gray-300 flex items-center justify-center text-xs text-gray-500">img</div>
+            {/* Content */}
+            <div className="flex gap-4 items-start">
+                <div className="flex-1 space-y-3">
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                        {description}
+                    </p>
+
+                    {recommendation && (
+                        <p className="text-xs font-semibold text-gray-800 bg-white px-3 py-2 rounded-lg border border-gray-200">
+                            💡 {recommendation}
+                        </p>
                     )}
+
+                    <Link
+                        href={ctaUrl}
+                        target="_blank"
+                        rel="noopener noreferrer sponsored"
+                        className="inline-flex items-center gap-2 bg-gray-900 hover:bg-gray-800 text-white text-xs font-bold py-2.5 px-4 rounded-lg shadow-sm transition-colors active:scale-95"
+                    >
+                        {ctaText}
+                        <ArrowRight size={14} />
+                    </Link>
                 </div>
-                <div className="flex flex-col flex-1 sm:hidden">
-                    <span className="text-xs font-bold text-gray-900">{productName}</span>
+
+                {/* Product Image */}
+                <div className="w-20 h-20 bg-white rounded-lg p-2 border border-gray-200 flex items-center justify-center flex-shrink-0 relative">
+                    {productImage ? (
+                        <img
+                            src={productImage}
+                            alt={productName}
+                            className="max-w-full max-h-full object-contain"
+                        />
+                    ) : (
+                        <div className="text-[10px] text-gray-400 text-center">{productName}</div>
+                    )}
+                    <span className="absolute -bottom-1.5 -right-1.5 bg-red-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded shadow-sm">
+                        Hot
+                    </span>
                 </div>
-                <button className="bg-primary hover:bg-violet-700 text-white text-sm font-bold px-4 py-2 rounded-md whitespace-nowrap active:scale-95 transition-transform">
-                    Ver Combo Ideal
-                </button>
             </div>
         </div>
     );
