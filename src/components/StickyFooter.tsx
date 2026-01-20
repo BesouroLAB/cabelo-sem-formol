@@ -2,13 +2,13 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Trophy, Search, Bookmark } from 'lucide-react';
+import { Home, Trophy, BookOpen, User } from 'lucide-react';
 
 const navItems = [
     { href: '/', label: 'Início', icon: Home },
     { href: '/ranking/2026', label: 'Ranking', icon: Trophy },
-    { href: '/busca', label: 'Buscar', icon: Search },
-    { href: '/salvos', label: 'Salvos', icon: Bookmark },
+    { href: '/blog', label: 'Blog', icon: BookOpen },
+    { href: '/sobre', label: 'Sobre', icon: User },
 ];
 
 export default function StickyFooter() {
@@ -29,8 +29,8 @@ export default function StickyFooter() {
                                     key={item.href}
                                     href={item.href}
                                     className={`flex flex-col items-center gap-1 transition-colors ${isActive
-                                            ? 'text-violet-600'
-                                            : 'text-gray-400 hover:text-gray-600'
+                                        ? 'text-violet-600'
+                                        : 'text-gray-400 hover:text-gray-600'
                                         }`}
                                 >
                                     <Icon size={20} strokeWidth={isActive ? 2 : 1.5} />
