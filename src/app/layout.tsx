@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Roboto } from "next/font/google";
 import "./globals.css";
+import StickyFooter from "@/components/StickyFooter";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,6 +30,7 @@ export default function RootLayout({
         className={`${inter.variable} ${roboto.variable} antialiased font-body bg-bg-soft text-gray-900`}
       >
         {children}
+        <StickyFooter />
       </body>
     </html>
   );

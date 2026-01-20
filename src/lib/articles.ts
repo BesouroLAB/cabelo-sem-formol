@@ -121,6 +121,17 @@ export function getSatelliteArticles(pillarId: string): Article[] {
     );
 }
 
+export function getArticleByUrlSlug(urlSlug: string): Article | null {
+    const allArticles = getAllArticles();
+    return allArticles.find((article) => article.frontmatter.slug === urlSlug) || null;
+}
+
+export function getArticleFileSlug(urlSlug: string): string | null {
+    const allArticles = getAllArticles();
+    const article = allArticles.find((a) => a.frontmatter.slug === urlSlug);
+    return article ? article.slug : null;
+}
+
 export function generateArticleSchema(article: Article): object {
     const { frontmatter } = article;
 

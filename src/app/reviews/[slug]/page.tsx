@@ -3,8 +3,8 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, Share2, Clock, Calendar, User, ChevronRight } from 'lucide-react';
 import {
-    getArticleBySlug,
-    getArticleSlugs,
+    getArticleByUrlSlug,
+    getAllArticles,
     generateArticleSchema,
     generateFAQSchema,
     generateProductSchema,
@@ -19,11 +19,11 @@ import SafetyBadge from '@/components/SafetyBadge';
 import InternalLink from '@/components/InternalLink';
 import AffiliateToast from '@/components/AffiliateToast';
 
-// Generate static params
+// Generate static params from frontmatter slugs
 export async function generateStaticParams() {
-    const slugs = getArticleSlugs();
-    return slugs.map((slug) => ({
-        slug,
+    const articles = getAllArticles();
+    return articles.map((article) => ({
+        slug: article.frontmatter.slug,
     }));
 }
 
@@ -34,7 +34,7 @@ export async function generateMetadata({
     params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
     const { slug } = await params;
-    const article = getArticleBySlug(slug);
+    const article = getArticleByUrlSlug(slug);
 
     if (!article) {
         return {
@@ -83,21 +83,22 @@ export default async function ReviewPage({
     params: Promise<{ slug: string }>;
 }) {
     const { slug } = await params;
-    const article = getArticleBySlug(slug);
+    const article = getArticleByUrlSlug(slug);
 
     if (!article) {
         notFound();
     }
 
     const { frontmatter } = article;
+    const fileSlug = article.slug; // This is the file name without extension
 
     // Generate schemas
     const articleSchema = generateArticleSchema(article);
     const faqSchema = generateFAQSchema(article);
     const productSchema = generateProductSchema(article);
 
-    // Dynamic MDX import
-    const MDXContent = (await import(`@/content/articles/${slug}.mdx`)).default;
+    // Dynamic MDX import using the file slug (not URL slug)
+    const MDXContent = (await import(`@/content/articles/${fileSlug}.mdx`)).default;
 
     return (
         <>
@@ -243,7 +244,7 @@ export default async function ReviewPage({
                     productName={frontmatter.featuredProduct.name}
                     price={frontmatter.featuredProduct.price}
                     imageUrl={frontmatter.featuredProduct.image}
-                    affiliateUrl={frontmatter.featuredProduct.affiliateUrl}
+                    linkUrl={frontmatter.featuredProduct.affiliateUrl}
                 />
             )}
         </>

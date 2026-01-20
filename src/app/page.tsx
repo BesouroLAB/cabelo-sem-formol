@@ -301,30 +301,6 @@ export default function Home() {
           </p>
         </section>
       </main>
-
-      {/* ========== STICKY FOOTER (APP STYLE) ========== */}
-      <footer className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 shadow-[0_-4px_20px_-2px_rgba(0,0,0,0.08)] z-50 safe-area-bottom">
-        <div className="max-w-md mx-auto px-4 py-3">
-          <div className="flex items-center justify-around">
-            <Link href="/" className="flex flex-col items-center gap-1 text-violet-600">
-              <HomeIcon size={20} strokeWidth={2} />
-              <span className="text-[10px] font-medium">Início</span>
-            </Link>
-            <Link href="/ranking/2026" className="flex flex-col items-center gap-1 text-gray-400 hover:text-gray-600 transition-colors">
-              <Trophy size={20} strokeWidth={1.5} />
-              <span className="text-[10px] font-medium">Ranking</span>
-            </Link>
-            <Link href="/busca" className="flex flex-col items-center gap-1 text-gray-400 hover:text-gray-600 transition-colors">
-              <Search size={20} strokeWidth={1.5} />
-              <span className="text-[10px] font-medium">Buscar</span>
-            </Link>
-            <Link href="/salvos" className="flex flex-col items-center gap-1 text-gray-400 hover:text-gray-600 transition-colors">
-              <Bookmark size={20} strokeWidth={1.5} />
-              <span className="text-[10px] font-medium">Salvos</span>
-            </Link>
-          </div>
-        </div>
-      </footer>
     </>
   );
 }
