@@ -1,5 +1,4 @@
 import React from 'react';
-import { ExternalLink } from 'lucide-react';
 
 interface AffiliateToastProps {
     productName: string;
@@ -15,31 +14,30 @@ export default function AffiliateToast({
     linkUrl
 }: AffiliateToastProps) {
     return (
-        <div className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] p-3 md:hidden">
-            <div className="flex items-center justify-between max-w-md mx-auto gap-3">
+        <footer className="fixed bottom-0 left-0 right-0 bg-white dark:bg-bg-dark border-t border-gray-100 dark:border-gray-800 p-4 z-50 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] safe-area-bottom md:hidden">
+            <div className="max-w-md mx-auto flex items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-gray-100 rounded-lg overflow-hidden border border-gray-200 shrink-0">
-                        {/* Placeholder for image - in real implementation use Next/Image */}
+                    <div className="w-12 h-12 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center justify-center p-1 overflow-hidden">
                         {imageUrl ? (
-                            <img src={imageUrl} alt={productName} className="w-full h-full object-cover" />
+                            <img src={imageUrl} alt={productName} className="w-full h-full object-contain" />
                         ) : (
-                            <div className="w-full h-full bg-gray-200" />
+                            <div className="w-full h-full bg-gray-200 dark:bg-gray-700" />
                         )}
                     </div>
                     <div>
-                        <h4 className="font-bold text-gray-900 text-sm leading-tight line-clamp-1">{productName}</h4>
-                        <span className="text-success font-bold text-sm tracking-tight">{price}</span>
+                        <p className="text-xs font-bold leading-tight text-gray-700 dark:text-gray-300">{productName}</p>
+                        <p className="text-lg font-black text-primary">{price}</p>
                     </div>
                 </div>
-
                 <a
                     href={linkUrl}
-                    className="flex-1 max-w-[140px] bg-success hover:bg-emerald-600 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 text-sm active:scale-95 transition-all shadow-md"
+                    target="_blank"
+                    rel="noopener noreferrer sponsored"
+                    className="bg-primary text-white font-bold py-3 px-6 rounded-xl flex items-center gap-2 whitespace-nowrap shadow-md active:scale-95 transition-transform"
                 >
-                    Ver Oferta
-                    <ExternalLink size={16} />
+                    Comprar Agora
                 </a>
             </div>
-        </div>
+        </footer>
     );
 }

@@ -1,175 +1,181 @@
 import Link from 'next/link';
-import { ArrowRight, Shield, ArrowLeft, Trophy, FileText, FlaskConical, ChevronRight } from 'lucide-react';
+import { Menu, Search, Medal, Award, Image as ImageIcon, Star } from 'lucide-react';
 
 export const metadata = {
-    title: 'O Laboratório do Liso: Ranking de Segurança e Performance | Cabelo Sem Formol',
-    description: 'Testamos pH, compatibilidade e resultado real das principais progressivas orgânicas do Brasil. Veja qual marca alisa sem estragar o fio.',
+    title: 'Progressivas Sem Formol: Guia Definitivo 2026 | Cabelo Sem Formol',
+    description: 'Nossa equipe clínica testou e aprovou as fórmulas mais seguras e eficazes para um alisamento saudável.',
 };
 
 const podium = [
     {
-        position: '🥇',
-        medal: 'OURO',
-        badge: 'Campeã Geral',
-        name: 'Fashion Gold',
-        tag: 'Para quem não quer errar.',
-        verdict: 'Liso espelhado e compatível com tudo.',
-        link: '/review/progressiva-fashion-gold',
-        buttonText: 'Ler Review Completo',
-        bgGradient: 'from-amber-50 via-yellow-50 to-orange-50',
-        borderColor: 'border-amber-200/50',
-        buttonGradient: 'from-amber-500 to-orange-500',
-        badgeGradient: 'from-amber-400 to-orange-400',
+        position: 1,
+        medal: '#1 GOLD',
+        badgeColor: 'bg-yellow-400 text-white',
+        name: 'Bio-Organic Premium',
+        description: 'Máxima durabilidade e brilho espelhado.',
+        link: '/review/bio-organic-premium',
+        featured: true,
     },
     {
-        position: '🥈',
-        medal: 'PRATA',
-        badge: 'Melhor Custo-Benefício',
-        name: 'Prohall Select One',
-        tag: 'Potência Máxima.',
-        verdict: 'Alisa cabelos resistentes gastando pouco.',
-        link: '/review/prohall-select-one',
-        buttonText: 'Ver Análise',
-        bgGradient: 'from-gray-50 via-slate-50 to-gray-100',
-        borderColor: 'border-gray-200/50',
-        buttonGradient: 'from-gray-500 to-gray-600',
-        badgeGradient: 'from-gray-400 to-slate-500',
+        position: 2,
+        medal: '#2 SILVER CHOICE',
+        badgeColor: 'text-gray-400',
+        name: 'EcoLiss Advanced',
+        description: 'Ideal para cabelos sensíveis.',
+        link: '/review/ecoliss-advanced',
     },
     {
-        position: '🥉',
-        medal: 'BRONZE',
-        badge: 'A Mais Suave',
-        name: 'Borabella Não Chore Mais',
-        tag: 'Conforto Total.',
-        verdict: 'Zero ardência e tratamento intenso.',
-        link: '/review/borabella-nao-chore-mais',
-        buttonText: 'Ver Preço',
-        bgGradient: 'from-orange-50/50 via-amber-50/50 to-yellow-50/50',
-        borderColor: 'border-orange-200/50',
-        buttonGradient: 'from-orange-400 to-amber-500',
-        badgeGradient: 'from-orange-300 to-amber-400',
+        position: 3,
+        medal: '#3 BRONZE CHOICE',
+        badgeColor: 'text-orange-600/70',
+        name: 'Silk Therapy Plus',
+        description: 'Melhor custo-benefício do ano.',
+        link: '/review/silk-therapy-plus',
     },
 ];
 
-const articles = [
+const filters = ['Tudo', 'Para Loiras', 'Para Gestantes', 'Cabelos Afros', 'Orgânicas'];
+
+const recentArticles = [
     {
-        id: '101',
-        emoji: '📄',
-        title: 'O Ranking Completo: As 5 Melhores Progressivas de 2026',
-        link: '/artigo/ranking-melhores-progressivas-2026',
+        title: 'Royal Gloss: A revolução dos aminoácidos',
+        description: 'Analisamos a nova fórmula do Royal Gloss que promete 100% de liso sem ardência nos olhos ou fumaça tóxica.',
+        score: '9.8',
+        image: '',
+        link: '/review/royal-gloss',
     },
     {
-        id: '102',
-        emoji: '🧪',
-        title: 'Mito ou Verdade: Progressiva Orgânica tem formol escondido?',
-        link: '/artigo/progressiva-organica-formol-mito',
-    },
-    {
-        id: '104',
-        emoji: '👱‍♀️',
-        title: 'Especial Loiras: Qual progressiva não amarela o fio descolorido?',
+        title: 'Qual a melhor progressiva para loiras?',
+        description: 'Descubra quais produtos não amarelam o fio e mantêm a integridade da fibra capilar após a descoloração.',
+        score: '9.5',
+        image: '',
         link: '/artigo/melhor-progressiva-loiras',
+    },
+    {
+        title: 'Segurança em primeiro lugar: Guia para Gestantes',
+        description: 'Entenda os ativos permitidos pela ANVISA e quais marcas oferecem as opções mais seguras para futuras mamães.',
+        score: '9.2',
+        image: '',
+        link: '/artigo/progressiva-gestantes',
     },
 ];
 
 export default function SiloProgressivas() {
     return (
         <>
-            {/* Header Sticky */}
-            <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 px-4 py-3">
-                <div className="max-w-md mx-auto flex items-center justify-between">
-                    <Link href="/" className="text-gray-500 hover:text-violet-600 transition-colors p-1">
-                        <ArrowLeft size={20} />
-                    </Link>
-                    <span className="font-bold text-sm tracking-tight text-gray-900">Progressivas & Ácidos</span>
-                    <div className="w-6" />
+            {/* TopAppBar */}
+            <nav className="sticky top-0 z-50 flex items-center glass p-4 justify-between border-b-0">
+                <div className="text-white flex size-10 shrink-0 items-center justify-center rounded-lg bg-white/10">
+                    <Menu size={24} />
                 </div>
-            </header>
+                <h2 className="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 px-3 text-center">
+                    CabeloSemFormol
+                </h2>
+                <div className="flex w-10 items-center justify-end">
+                    <button className="flex cursor-pointer items-center justify-center rounded-lg h-10 w-10 bg-transparent text-white hover:bg-white/10">
+                        <Search size={24} />
+                    </button>
+                </div>
+            </nav>
 
-            <main className="max-w-md mx-auto px-4 pt-6 pb-8 space-y-8">
-                {/* Hero Section */}
-                <section className="text-center space-y-4">
-                    <div className="inline-flex items-center gap-2 bg-violet-50 text-violet-700 px-3 py-1.5 rounded-full text-xs font-semibold border border-violet-100">
-                        <Shield size={14} className="text-violet-600" />
-                        <span>Análise Independente • Sem Fake News</span>
-                    </div>
-
-                    <h1 className="text-2xl font-bold font-heading text-gray-900 leading-tight">
-                        Alisamento Seguro Existe?
+            <main className="max-w-md mx-auto">
+                {/* Intro Box */}
+                <div className="px-4 pt-8 pb-4">
+                    <h1 className="text-white tracking-tight text-[32px] font-bold leading-tight pb-3">
+                        Progressivas Sem Formol
                     </h1>
-
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                        Nossa equipe analisou a ficha técnica de <strong className="text-gray-800">12 marcas</strong>.
-                        Descubra quais passaram no teste de pH e segurança da Anvisa.
+                    <p className="text-slate-400 text-base font-normal leading-relaxed">
+                        Guia definitivo 2026. Nossa equipe clínica testou e aprovou as fórmulas mais seguras e eficazes para um alisamento saudável.
                     </p>
-                </section>
+                </div>
 
                 {/* O Pódio 2026 */}
-                <section className="space-y-4">
-                    <div className="flex items-center gap-2">
-                        <Trophy size={20} className="text-amber-500" />
-                        <h2 className="text-lg font-bold font-heading text-gray-900">
+                <div className="px-4 py-6">
+                    <div className="flex items-center gap-2 mb-4">
+                        <Medal className="text-purple-400" size={24} />
+                        <h2 className="text-white text-[22px] font-bold leading-tight tracking-tight">
                             O Pódio 2026
                         </h2>
                     </div>
 
-                    <div className="space-y-4">
+                    <div className="grid grid-cols-1 gap-4">
                         {podium.map((item) => (
-                            <article
+                            <div
                                 key={item.name}
-                                className={`group relative bg-gradient-to-br ${item.bgGradient} rounded-2xl border ${item.borderColor} overflow-hidden`}
+                                className={`relative glass rounded-xl p-4 flex items-center gap-4 ${item.featured ? 'border-purple-500/50' : ''}`}
                             >
-                                <div className={`absolute top-3 right-3 bg-gradient-to-r ${item.badgeGradient} text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-sm`}>
-                                    {item.position} {item.medal}
-                                </div>
-                                <div className="p-5">
-                                    <div className="w-full h-32 bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl mb-4 flex items-center justify-center overflow-hidden">
-                                        <div className="text-gray-400 text-xs">Foto {item.name}</div>
+                                {item.featured && (
+                                    <div className="absolute -top-3 -left-2 bg-gradient-to-r from-yellow-400 to-yellow-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg flex items-center gap-1">
+                                        <Award size={14} />
+                                        {item.medal}
                                     </div>
-                                    <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">{item.badge}</span>
-                                    <h3 className="text-base font-bold text-gray-900 mt-1 mb-1">
-                                        {item.name}
-                                    </h3>
-                                    <p className="text-xs text-violet-600 font-medium mb-1">{item.tag}</p>
-                                    <p className="text-gray-600 text-xs leading-relaxed mb-4">
-                                        {item.verdict}
-                                    </p>
+                                )}
+                                <div className="w-24 h-24 rounded-lg bg-white/5 flex-shrink-0 flex items-center justify-center border border-white/10">
+                                    <ImageIcon className="text-slate-600" size={24} />
+                                </div>
+                                <div className="flex-1">
+                                    {!item.featured && (
+                                        <div className={`flex items-center gap-1 ${item.badgeColor} text-[10px] font-bold uppercase mb-1`}>
+                                            {item.medal}
+                                        </div>
+                                    )}
+                                    <h3 className="font-bold text-lg leading-tight mb-1 text-white">{item.name}</h3>
+                                    <p className="text-xs text-slate-400 mb-3">{item.description}</p>
                                     <Link
                                         href={item.link}
-                                        className={`inline-flex items-center gap-2 bg-gradient-to-r ${item.buttonGradient} hover:opacity-90 text-white font-semibold py-2.5 px-4 rounded-lg text-sm shadow-md transition-all active:scale-95`}
+                                        className={`text-sm font-bold py-2 px-4 rounded-lg w-full block text-center transition-all active:scale-95 ${item.featured ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white' : 'bg-white/10 text-white'}`}
                                     >
-                                        {item.buttonText}
-                                        <ArrowRight size={14} />
+                                        Ver Review
                                     </Link>
                                 </div>
-                            </article>
+                            </div>
                         ))}
                     </div>
-                </section>
+                </div>
 
-                {/* Lista de Leitura Obrigatória */}
-                <section className="space-y-4">
-                    <div className="flex items-center gap-2">
-                        <FileText size={20} className="text-violet-600" />
-                        <h2 className="text-lg font-bold font-heading text-gray-900">
-                            Leitura Obrigatória
-                        </h2>
-                    </div>
-
-                    <div className="space-y-2">
-                        {articles.map((article) => (
-                            <Link
-                                key={article.id}
-                                href={article.link}
-                                className="flex items-center gap-3 bg-white rounded-xl border border-gray-100 p-4 hover:shadow-md hover:border-gray-200 transition-all active:scale-[0.99]"
+                {/* Horizontal Scrolling Filters (Pills) */}
+                <div className="py-4">
+                    <div className="flex overflow-x-auto px-4 gap-2 hide-scrollbar">
+                        {filters.map((filter, index) => (
+                            <button
+                                key={filter}
+                                className={`whitespace-nowrap px-5 py-2 rounded-full text-sm font-semibold transition-all ${index === 0 ? 'bg-purple-600 text-white shadow-lg shadow-purple-900/20' : 'bg-white/5 text-slate-300 border border-white/10'}`}
                             >
-                                <span className="text-lg">{article.emoji}</span>
-                                <span className="flex-1 text-sm font-medium text-gray-800 leading-tight">{article.title}</span>
-                                <ChevronRight size={16} className="text-gray-400" />
-                            </Link>
+                                {filter}
+                            </button>
                         ))}
                     </div>
-                </section>
+                </div>
+
+                {/* Feed of vertical cards */}
+                <div className="px-4 pb-12 space-y-6">
+                    <h2 className="text-white text-xl font-bold pt-4 font-heading">Análises Recentes</h2>
+
+                    {recentArticles.map((article, index) => (
+                        <Link key={index} href={article.link} className="group flex flex-col gap-3">
+                            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl bg-white/5 border border-white/10">
+                                {article.image ? (
+                                    <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style={{ backgroundImage: `url(${article.image})` }}></div>
+                                ) : (
+                                    <div className="absolute inset-0 flex items-center justify-center">
+                                        <ImageIcon className="text-slate-700" size={40} />
+                                    </div>
+                                )}
+                                <div className="absolute top-3 right-3 glass px-2 py-1 rounded-lg flex items-center gap-1 border border-purple-500/30">
+                                    <Star className="text-purple-400 fill-purple-400" size={14} />
+                                    <span className="font-bold text-sm text-white">{article.score}</span>
+                                </div>
+                            </div>
+                            <div className="flex flex-col gap-1">
+                                <h3 className="text-lg font-bold leading-tight text-white group-hover:text-purple-400 transition-colors">{article.title}</h3>
+                                <p className="text-sm text-slate-400 line-clamp-2">{article.description}</p>
+                            </div>
+                        </Link>
+                    ))}
+                </div>
+
+                {/* Spacer for bottom nav */}
+                <div className="h-20"></div>
             </main>
         </>
     );

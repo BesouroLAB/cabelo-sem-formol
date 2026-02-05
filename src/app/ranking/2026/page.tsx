@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
 import { Trophy, ArrowRight, ChevronRight, Star, Shield, Zap, Droplets } from 'lucide-react';
+import Header from '@/components/Header';
 
 export const metadata: Metadata = {
     title: 'Ranking 2026: As Melhores Progressivas e Chapinhas | Cabelo Sem Formol',
@@ -51,95 +52,96 @@ const rankings = [
 
 const getBadgeColor = (badge: string) => {
     switch (badge) {
-        case 'Diamante': return 'bg-violet-100 text-violet-700 border-violet-200';
-        case 'Ouro': return 'bg-amber-100 text-amber-700 border-amber-200';
-        case 'Prata': return 'bg-gray-100 text-gray-700 border-gray-200';
-        case 'Bronze': return 'bg-orange-100 text-orange-700 border-orange-200';
-        default: return 'bg-gray-100 text-gray-700 border-gray-200';
+        case 'Diamante': return 'bg-blue-500/20 text-blue-400 border-blue-500/30 shadow-[0_0_10px_rgba(59,130,246,0.2)]';
+        case 'Ouro': return 'bg-amber-500/20 text-amber-400 border-amber-500/30 shadow-[0_0_10px_rgba(245,158,11,0.2)]';
+        case 'Prata': return 'bg-slate-500/20 text-slate-400 border-slate-500/30';
+        case 'Bronze': return 'bg-orange-500/20 text-orange-400 border-orange-500/30';
+        default: return 'bg-slate-800/50 text-slate-500 border-white/5';
     }
 };
 
 const getPositionIcon = (position: number) => {
     switch (position) {
-        case 1: return '🥇';
-        case 2: return '🥈';
-        case 3: return '🥉';
-        default: return `${position}º`;
+        case 1: return <span className="text-2xl drop-shadow-[0_0_8px_rgba(234,179,8,0.5)]">🥇</span>;
+        case 2: return <span className="text-2xl">🥈</span>;
+        case 3: return <span className="text-2xl">🥉</span>;
+        default: return <span className="text-lg font-bold text-slate-500">{position}º</span>;
     }
 };
 
 export default function RankingPage() {
     return (
-        <>
-            {/* Header */}
-            <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 px-4 py-3">
-                <div className="max-w-md mx-auto flex items-center justify-center">
-                    <span className="font-bold text-sm tracking-tight text-gray-900">CabeloSemFormol.com.br</span>
-                </div>
-            </header>
+        <div className="bg-organic-bg min-h-screen">
+            <Header />
 
-            <main className="max-w-md mx-auto px-4 pt-6 pb-28 space-y-8">
+            <main className="max-w-md mx-auto px-4 pt-10 pb-28 space-y-12">
                 {/* Hero */}
                 <section className="text-center space-y-4">
-                    <div className="inline-flex items-center gap-2 bg-violet-100 text-violet-700 px-3 py-1.5 rounded-full text-xs font-semibold border border-violet-200">
-                        <Trophy size={14} />
-                        Atualizado em Janeiro 2026
+                    <div className="inline-flex items-center gap-2 bg-emerald-900/40 text-emerald-400 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] border border-emerald-500/30 shadow-lg shadow-emerald-500/10">
+                        <Trophy size={14} className="animate-pulse" />
+                        Dossiê Técnico 2026
                     </div>
 
-                    <h1 className="text-2xl font-bold font-heading text-gray-900">
-                        Ranking Oficial 2026
+                    <h1 className="text-3xl font-black font-heading text-white drop-shadow-md">
+                        Ranking <span className="text-gradient">Absoluto</span>
                     </h1>
 
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                        Os melhores produtos testados e aprovados pela nossa redação. Análises técnicas, comparativos de pH e testes de durabilidade.
+                    <p className="text-sm text-slate-400 leading-relaxed max-w-[300px] mx-auto font-medium">
+                        A autoridade definitiva em alisamento. Dados laboratoriais convertidos em performance real.
                     </p>
                 </section>
 
                 {/* Rankings */}
                 {rankings.map((ranking, idx) => (
-                    <section key={idx} className="space-y-4">
+                    <section key={idx} className="space-y-6">
                         {/* Category Header */}
-                        <div className="flex items-center gap-3">
-                            <span className="text-2xl">{ranking.icon}</span>
+                        <div className="flex items-center gap-3 px-1">
+                            <div className="size-12 rounded-2xl glass border border-white/10 flex items-center justify-center text-2xl shadow-inner">
+                                {ranking.icon}
+                            </div>
                             <div>
-                                <h2 className="text-lg font-bold font-heading text-gray-900">
+                                <h2 className="text-lg font-black font-heading text-white tracking-tight">
                                     {ranking.category}
                                 </h2>
-                                <p className="text-xs text-gray-500">{ranking.description}</p>
+                                <p className="text-[10px] text-emerald-500/70 font-black uppercase tracking-widest">{ranking.description}</p>
                             </div>
                         </div>
 
                         {/* Items */}
-                        <div className="space-y-2">
+                        <div className="space-y-3">
                             {ranking.items.map((item) => (
                                 <Link
                                     key={item.position}
                                     href={item.slug}
-                                    className={`flex items-center gap-3 p-4 rounded-xl border transition-all active:scale-[0.99] ${item.highlight
-                                            ? 'bg-gradient-to-r from-violet-50 to-purple-50 border-violet-200 shadow-sm'
-                                            : 'bg-white border-gray-100 hover:border-gray-200'
+                                    className={`flex items-center gap-4 p-5 rounded-2xl border transition-all active:scale-[0.98] glass group animate-in fade-in slide-in-from-bottom-2 ${item.highlight
+                                        ? 'border-emerald-500/50 shadow-lg shadow-emerald-500/10 bg-emerald-900/10'
+                                        : 'border-white/5 hover:border-white/20'
                                         }`}
+                                    style={{ animationDelay: `${item.position * 100}ms` }}
                                 >
                                     {/* Position */}
-                                    <span className="text-xl w-8 text-center flex-shrink-0">
+                                    <div className="w-8 flex justify-center flex-shrink-0">
                                         {getPositionIcon(item.position)}
-                                    </span>
+                                    </div>
 
                                     {/* Info */}
                                     <div className="flex-1 min-w-0">
                                         <div className="flex items-center gap-2">
-                                            <span className="font-bold text-sm text-gray-900 truncate">{item.name}</span>
-                                            <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded border ${getBadgeColor(item.badge)}`}>
+                                            <span className="font-bold text-base text-white truncate drop-shadow-sm group-hover:text-emerald-300 transition-colors font-heading">{item.name}</span>
+                                            <span className={`text-[8px] font-black px-1.5 py-0.5 rounded-md border uppercase tracking-tighter ${getBadgeColor(item.badge)}`}>
                                                 {item.badge}
                                             </span>
                                         </div>
-                                        <span className="text-xs text-gray-500">{item.brand}</span>
+                                        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">{item.brand}</span>
                                     </div>
 
                                     {/* Score */}
-                                    <div className="flex items-center gap-1 flex-shrink-0">
-                                        <span className="text-lg font-bold text-gray-900">{item.score}</span>
-                                        <ChevronRight size={16} className="text-gray-400" />
+                                    <div className="flex items-center gap-2 flex-shrink-0 pl-2 border-l border-white/5">
+                                        <div className="flex flex-col items-end">
+                                            <span className="text-xl font-black text-white leading-none">{item.score.toFixed(1)}</span>
+                                            <span className="text-[8px] font-black text-amber-500 uppercase tracking-tighter">Nota CSF</span>
+                                        </div>
+                                        <ChevronRight size={16} className="text-slate-600 group-hover:text-emerald-400 transition-colors" />
                                     </div>
                                 </Link>
                             ))}
@@ -148,66 +150,74 @@ export default function RankingPage() {
                         {/* CTA */}
                         <Link
                             href={ranking.ctaSlug}
-                            className="flex items-center justify-center gap-2 text-sm font-semibold text-violet-600 hover:text-violet-700 py-2 transition-colors"
+                            className="flex items-center justify-center gap-2 text-xs font-black text-emerald-400 hover:text-emerald-300 py-3 glass rounded-xl border border-emerald-500/20 transition-all active:scale-95 uppercase tracking-[0.2em]"
                         >
                             {ranking.ctaText}
-                            <ArrowRight size={14} />
+                            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                         </Link>
                     </section>
                 ))}
 
                 {/* Metodologia */}
-                <section className="bg-gray-50 rounded-2xl p-5 space-y-4">
-                    <h3 className="text-sm font-bold text-gray-900 uppercase tracking-wider">
-                        Nossa Metodologia
+                <section className="glass rounded-3xl p-6 space-y-6 border-white/5 relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <Shield size={80} className="text-emerald-500" />
+                    </div>
+
+                    <h3 className="text-xs font-black text-white uppercase tracking-[0.3em] flex items-center gap-2">
+                        <span className="size-1.5 bg-emerald-500 rounded-full animate-pulse" />
+                        Critérios Científicos
                     </h3>
 
-                    <div className="grid grid-cols-2 gap-3">
-                        <div className="flex items-start gap-2">
-                            <Shield size={16} className="text-emerald-600 mt-0.5 flex-shrink-0" />
-                            <div>
-                                <span className="text-xs font-semibold text-gray-900">Segurança</span>
-                                <p className="text-[10px] text-gray-500">Análise de pH e composição</p>
+                    <div className="grid grid-cols-2 gap-4">
+                        <div className="space-y-1">
+                            <div className="flex items-center gap-2">
+                                <Shield size={14} className="text-emerald-400" />
+                                <span className="text-[10px] font-black text-white uppercase tracking-widest">Segurança</span>
                             </div>
+                            <p className="text-[9px] text-slate-500 leading-tight">Análise química de pH e ativos alisantes.</p>
                         </div>
-                        <div className="flex items-start gap-2">
-                            <Zap size={16} className="text-amber-600 mt-0.5 flex-shrink-0" />
-                            <div>
-                                <span className="text-xs font-semibold text-gray-900">Performance</span>
-                                <p className="text-[10px] text-gray-500">Testes de alisamento</p>
+                        <div className="space-y-1">
+                            <div className="flex items-center gap-2">
+                                <Zap size={14} className="text-amber-400" />
+                                <span className="text-[10px] font-black text-white uppercase tracking-widest">Performance</span>
                             </div>
+                            <p className="text-[9px] text-slate-500 leading-tight">Teste de tensão superficial e selagem.</p>
                         </div>
-                        <div className="flex items-start gap-2">
-                            <Star size={16} className="text-violet-600 mt-0.5 flex-shrink-0" />
-                            <div>
-                                <span className="text-xs font-semibold text-gray-900">Durabilidade</span>
-                                <p className="text-[10px] text-gray-500">Avaliação pós-lavagens</p>
+                        <div className="space-y-1">
+                            <div className="flex items-center gap-2">
+                                <Star size={14} className="text-emerald-400" />
+                                <span className="text-[10px] font-black text-white uppercase tracking-widest">Durabilidade</span>
                             </div>
+                            <p className="text-[9px] text-slate-500 leading-tight">Avaliação estrutural após 15 lavagens.</p>
                         </div>
-                        <div className="flex items-start gap-2">
-                            <Droplets size={16} className="text-sky-600 mt-0.5 flex-shrink-0" />
-                            <div>
-                                <span className="text-xs font-semibold text-gray-900">Compatibilidade</span>
-                                <p className="text-[10px] text-gray-500">Testes em diferentes tipos</p>
+                        <div className="space-y-1">
+                            <div className="flex items-center gap-2">
+                                <Droplets size={14} className="text-cyan-400" />
+                                <span className="text-[10px] font-black text-white uppercase tracking-widest">Retenção</span>
                             </div>
+                            <p className="text-[9px] text-slate-500 leading-tight">Capacidade de retenção hídrica do fio.</p>
                         </div>
                     </div>
                 </section>
 
                 {/* CTA Final */}
-                <section className="text-center space-y-3">
-                    <p className="text-sm text-gray-600">
-                        Não encontrou o que procura?
+                <section className="text-center space-y-6 pt-6">
+                    <p className="text-[10px] font-bold text-slate-600 uppercase tracking-[0.2em]">
+                        Não encontrou sua marca preferida?
                     </p>
                     <Link
-                        href="/"
-                        className="inline-flex items-center gap-2 bg-gray-900 hover:bg-gray-800 text-white py-3 px-6 rounded-xl font-bold text-sm transition-colors active:scale-95"
+                        href="/blog"
+                        className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-emerald-600 to-amber-600 text-white py-4 px-8 rounded-2xl font-black text-xs uppercase tracking-widest transition-all active:scale-95 shadow-xl shadow-emerald-500/20 overflow-hidden"
                     >
-                        Explorar por Categoria
-                        <ArrowRight size={16} />
+                        <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                        <span className="relative flex items-center gap-2">
+                            Ver Todas as Análises
+                            <ArrowRight size={16} />
+                        </span>
                     </Link>
                 </section>
             </main>
-        </>
+        </div>
     );
 }

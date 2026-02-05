@@ -31,31 +31,33 @@ export default function HardwarePairWidget({
     }[icon];
 
     const iconColors = {
-        warning: 'text-amber-500',
-        bolt: 'text-violet-500',
-        info: 'text-sky-500',
+        warning: 'text-amber-400',
+        bolt: 'text-purple-400',
+        info: 'text-blue-400',
     }[icon];
 
     return (
-        <div className="bg-gray-50 rounded-2xl border-2 border-dashed border-gray-300 p-5 my-6 relative overflow-hidden">
+        <div className="glass rounded-2xl border border-white/10 p-5 my-6 relative overflow-hidden group hover:shadow-xl transition-all hover:-translate-y-1">
             {/* Header */}
             <div className="flex items-center gap-2 mb-4">
-                <IconComponent size={20} className={`${iconColors} animate-pulse`} />
-                <h4 className="font-bold text-sm uppercase tracking-wide text-violet-700">
+                <div className={`p-1.5 rounded-lg ${icon === 'warning' ? 'bg-amber-500/10' : icon === 'bolt' ? 'bg-purple-500/10' : 'bg-blue-500/10'}`}>
+                    <IconComponent size={18} className={iconColors} />
+                </div>
+                <h4 className="font-bold text-xs uppercase tracking-[0.1em] text-slate-300">
                     {title}
                 </h4>
             </div>
 
             {/* Content */}
             <div className="flex gap-4 items-start">
-                <div className="flex-1 space-y-3">
-                    <p className="text-sm text-gray-600 leading-relaxed">
+                <div className="flex-1 space-y-4">
+                    <p className="text-sm text-slate-400 leading-relaxed font-medium">
                         {description}
                     </p>
 
                     {recommendation && (
-                        <p className="text-xs font-semibold text-gray-800 bg-white px-3 py-2 rounded-lg border border-gray-200">
-                            💡 {recommendation}
+                        <p className="text-xs font-semibold text-white bg-white/5 px-3 py-2.5 rounded-xl border border-white/10 flex items-center gap-2">
+                            <span className="text-yellow-400">💡</span> {recommendation}
                         </p>
                     )}
 
@@ -63,26 +65,27 @@ export default function HardwarePairWidget({
                         href={ctaUrl}
                         target="_blank"
                         rel="noopener noreferrer sponsored"
-                        className="inline-flex items-center gap-2 bg-gray-900 hover:bg-gray-800 text-white text-xs font-bold py-2.5 px-4 rounded-lg shadow-sm transition-colors active:scale-95"
+                        className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:brightness-110 text-white text-xs font-bold py-3 px-5 rounded-xl shadow-lg shadow-purple-500/20 transition-all active:scale-95 group"
                     >
                         {ctaText}
-                        <ArrowRight size={14} />
+                        <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                     </Link>
                 </div>
 
                 {/* Product Image */}
-                <div className="w-20 h-20 bg-white rounded-lg p-2 border border-gray-200 flex items-center justify-center flex-shrink-0 relative">
+                <div className="w-24 h-24 bg-white/5 rounded-2xl p-3 border border-white/10 flex items-center justify-center flex-shrink-0 relative overflow-hidden group-hover:bg-white/10 transition-colors">
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent"></div>
                     {productImage ? (
                         <img
                             src={productImage}
                             alt={productName}
-                            className="max-w-full max-h-full object-contain"
+                            className="max-w-full max-h-full object-contain relative z-10"
                         />
                     ) : (
-                        <div className="text-[10px] text-gray-400 text-center">{productName}</div>
+                        <div className="text-[10px] text-slate-500 text-center font-bold tracking-tight relative z-10">{productName}</div>
                     )}
-                    <span className="absolute -bottom-1.5 -right-1.5 bg-red-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded shadow-sm">
-                        Hot
+                    <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[9px] font-black px-2 py-0.5 rounded shadow-lg z-20">
+                        OFFER
                     </span>
                 </div>
             </div>

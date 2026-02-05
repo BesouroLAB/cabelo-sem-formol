@@ -35,8 +35,10 @@ export interface Review {
     hardwarePair?: {
         title: string;
         productName: string;
-        imageUrl: string;
-        linkUrl: string;
+        productImage?: string;
+        description: string;
+        ctaText: string;
+        ctaUrl: string;
     }
 }
 
@@ -84,10 +86,12 @@ export const reviews: Review[] = [
         },
 
         hardwarePair: {
-            title: 'Este ácido exige temperatura estável de 230°C para ativação completa.',
+            title: 'Chapinha Recomendada',
             productName: 'Lizze Extreme',
-            imageUrl: products[1].imageUrl,
-            linkUrl: products[1].affiliateLink
+            productImage: products[1].imageUrl,
+            description: 'Este ácido exige temperatura estável de 230°C para ativação completa.',
+            ctaText: 'Ver Chapinha',
+            ctaUrl: products[1].affiliateLink
         }
     }
 ];

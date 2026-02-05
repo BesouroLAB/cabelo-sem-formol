@@ -1,5 +1,3 @@
-'use client';
-
 import { CheckCircle2, XCircle } from 'lucide-react';
 
 interface ProsConsTableProps {
@@ -9,31 +7,29 @@ interface ProsConsTableProps {
 
 export default function ProsConsTable({ pros, cons }: ProsConsTableProps) {
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
+        <div className="grid grid-cols-2 gap-3 my-6">
             {/* Prós */}
-            <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-100">
-                <h4 className="font-bold text-sm text-gray-900 uppercase tracking-wider mb-1">Prós</h4>
-                <span className="text-[10px] text-emerald-600 block mb-3 font-medium">(Benefícios Clínicos)</span>
-                <ul className="space-y-2">
+            <div className="bg-green-950/20 p-4 rounded-xl border border-green-900/30 glass">
+                <div className="flex items-center gap-2 mb-3 text-green-400">
+                    <CheckCircle2 size={20} />
+                    <span className="font-bold text-sm uppercase">Prós</span>
+                </div>
+                <ul className="text-xs space-y-2 text-slate-400 font-medium">
                     {pros.map((pro, index) => (
-                        <li key={index} className="flex items-start gap-2">
-                            <CheckCircle2 size={16} className="text-emerald-500 mt-0.5 flex-shrink-0" />
-                            <span className="text-sm text-gray-700">{pro}</span>
-                        </li>
+                        <li key={index}>• {pro}</li>
                     ))}
                 </ul>
             </div>
 
             {/* Contras */}
-            <div className="bg-red-50 rounded-xl p-4 border border-red-100">
-                <h4 className="font-bold text-sm text-gray-900 uppercase tracking-wider mb-1">Contras</h4>
-                <span className="text-[10px] text-red-600 block mb-3 font-medium">(Limitações Técnicas)</span>
-                <ul className="space-y-2">
+            <div className="bg-red-950/20 p-4 rounded-xl border border-red-900/30 glass">
+                <div className="flex items-center gap-2 mb-3 text-red-400">
+                    <XCircle size={20} />
+                    <span className="font-bold text-sm uppercase">Contras</span>
+                </div>
+                <ul className="text-xs space-y-2 text-slate-400 font-medium">
                     {cons.map((con, index) => (
-                        <li key={index} className="flex items-start gap-2">
-                            <XCircle size={16} className="text-red-500 mt-0.5 flex-shrink-0" />
-                            <span className="text-sm text-gray-700">{con}</span>
-                        </li>
+                        <li key={index}>• {con}</li>
                     ))}
                 </ul>
             </div>

@@ -123,19 +123,21 @@ export function getSatelliteArticles(pillarId: string): Article[] {
 
 export function getArticleByUrlSlug(urlSlug: string): Article | null {
     const allArticles = getAllArticles();
-    return allArticles.find((article) => article.frontmatter.slug === urlSlug) || null;
+    return allArticles.find((article) => {
+        const articleSlug = article.frontmatter.slug.split('/').pop();
+        return articleSlug === urlSlug;
+    }) || null;
 }
 
 export function getArticleFileSlug(urlSlug: string): string | null {
-    const allArticles = getAllArticles();
-    const article = allArticles.find((a) => a.frontmatter.slug === urlSlug);
+    const article = getArticleByUrlSlug(urlSlug);
     return article ? article.slug : null;
 }
 
 export function generateArticleSchema(article: Article): object {
     const { frontmatter } = article;
 
-    const schema: any = {
+    const schema: Record<string, unknown> = {
         '@context': 'https://schema.org',
         '@type': 'Article',
         headline: frontmatter.title,

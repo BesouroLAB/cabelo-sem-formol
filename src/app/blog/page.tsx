@@ -1,19 +1,22 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { ChevronRight, Clock, FlaskConical, Plug2, ShowerHead, Droplets } from 'lucide-react';
+import { ChevronRight, Clock, FlaskConical, Zap, Droplets, PlusCircle, Calendar } from 'lucide-react';
 import { getAllArticles } from '@/lib/articles';
+import Header from '@/components/Header';
 
 export const metadata: Metadata = {
     title: 'Blog | Cabelo Sem Formol',
     description: 'Artigos, reviews e guias sobre progressivas sem formol, chapinhas de titânio e cuidados capilares.',
 };
 
-const siloInfo: Record<number, { name: string; icon: React.ReactNode; color: string }> = {
-    1: { name: 'Progressivas', icon: <FlaskConical size={14} />, color: 'bg-violet-100 text-violet-700' },
-    2: { name: 'Chapinhas', icon: <Plug2 size={14} />, color: 'bg-amber-100 text-amber-700' },
-    3: { name: 'Chuveiro', icon: <ShowerHead size={14} />, color: 'bg-sky-100 text-sky-700' },
-    4: { name: 'Manutenção', icon: <Droplets size={14} />, color: 'bg-emerald-100 text-emerald-700' },
+const siloInfo: Record<number, { name: string; icon: React.ReactNode; color: string; iconColor: string }> = {
+    1: { name: 'Progressivas', icon: <FlaskConical size={14} />, color: 'bg-emerald-900/40 border-emerald-500/30', iconColor: 'text-emerald-400' },
+    2: { name: 'Chapinhas', icon: <Zap size={14} />, color: 'bg-amber-900/40 border-amber-500/30', iconColor: 'text-amber-400' },
+    3: { name: 'Chuveiro', icon: <Droplets size={14} />, color: 'bg-cyan-900/40 border-cyan-500/30', iconColor: 'text-cyan-400' },
+    4: { name: 'Fios & Saúde', icon: <PlusCircle size={14} />, color: 'bg-white/5 border-white/20', iconColor: 'text-white' },
 };
+
+import EditorialCard from '@/components/EditorialCard';
 
 export default function BlogPage() {
     const articles = getAllArticles();
@@ -27,22 +30,17 @@ export default function BlogPage() {
     }, {} as Record<number, typeof articles>);
 
     return (
-        <>
-            {/* Header */}
-            <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 px-4 py-3">
-                <div className="max-w-md mx-auto flex items-center justify-center">
-                    <span className="font-bold text-sm tracking-tight text-gray-900">CabeloSemFormol.com.br</span>
-                </div>
-            </header>
+        <div className="bg-organic-bg min-h-screen">
+            <Header />
 
-            <main className="max-w-md mx-auto px-4 pt-6 pb-28 space-y-8">
+            <main className="max-w-md mx-auto px-4 pt-10 pb-28 space-y-10">
                 {/* Hero */}
-                <section className="text-center space-y-3">
-                    <h1 className="text-2xl font-bold font-heading text-gray-900">
-                        Blog & Reviews
+                <section className="text-center space-y-4">
+                    <h1 className="text-3xl font-black font-heading text-white drop-shadow-md">
+                        Dossiês <span className="text-gradient">Técnicos</span>
                     </h1>
-                    <p className="text-sm text-gray-600">
-                        {articles.length} artigos sobre alisamento seguro
+                    <p className="text-sm text-slate-400 max-w-[280px] mx-auto leading-relaxed font-medium">
+                        {articles.length} investigações profundas e estudos técnicos sobre alisamento capilar.
                     </p>
                 </section>
 
@@ -52,22 +50,24 @@ export default function BlogPage() {
                     .map(([silo, siloArticles]) => {
                         const info = siloInfo[Number(silo)];
                         return (
-                            <section key={silo} className="space-y-3">
+                            <section key={silo} className="space-y-6">
                                 {/* Silo Header */}
-                                <div className="flex items-center gap-2">
-                                    <span className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-semibold ${info.color}`}>
-                                        {info.icon}
-                                        {info.name}
-                                    </span>
-                                    <span className="text-xs text-gray-400">
+                                <div className="flex items-center justify-between px-1">
+                                    <div className="flex items-center gap-2">
+                                        <div className={`p-2 rounded-lg ${info.color} border flex items-center justify-center`}>
+                                            <span className={info.iconColor}>{info.icon}</span>
+                                        </div>
+                                        <h2 className="font-black font-heading text-sm text-white uppercase tracking-widest">{info.name}</h2>
+                                    </div>
+                                    <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">
                                         {siloArticles.length} artigos
                                     </span>
                                 </div>
 
                                 {/* Lista de Artigos */}
-                                <div className="space-y-2">
+                                <div className="space-y-6">
                                     {siloArticles.map((article) => {
-                                        const { frontmatter, slug } = article;
+                                        const { frontmatter } = article;
                                         const isPillar = frontmatter.type === 'pillar';
                                         const urlPath = frontmatter.slug.startsWith('/reviews')
                                             ? frontmatter.slug
@@ -76,30 +76,17 @@ export default function BlogPage() {
                                                 : `/reviews/${frontmatter.slug}`;
 
                                         return (
-                                            <Link
-                                                key={slug}
-                                                href={urlPath}
-                                                className={`flex items-start gap-3 p-4 rounded-xl border transition-all active:scale-[0.99] ${isPillar
-                                                        ? 'bg-gradient-to-r from-violet-50 to-purple-50 border-violet-200'
-                                                        : 'bg-white border-gray-100 hover:border-gray-200'
-                                                    }`}
-                                            >
-                                                <div className="flex-1 min-w-0 space-y-1">
-                                                    {isPillar && (
-                                                        <span className="text-[10px] font-bold text-violet-600 uppercase tracking-wider">
-                                                            Artigo Pilar
-                                                        </span>
-                                                    )}
-                                                    <h3 className="text-sm font-semibold text-gray-900 leading-snug line-clamp-2">
-                                                        {frontmatter.title}
-                                                    </h3>
-                                                    <div className="flex items-center gap-2 text-[10px] text-gray-500">
-                                                        <Clock size={10} />
-                                                        <span>{frontmatter.readingTime}</span>
-                                                    </div>
-                                                </div>
-                                                <ChevronRight size={16} className="text-gray-400 flex-shrink-0 mt-1" />
-                                            </Link>
+                                            <EditorialCard
+                                                key={frontmatter.slug}
+                                                slug={urlPath}
+                                                title={frontmatter.title}
+                                                excerpt={frontmatter.description}
+                                                category={isPillar ? "Pillar Post" : "Análise Técnica"}
+                                                image={frontmatter.image || frontmatter.ogImage}
+                                                author={frontmatter.author}
+                                                readTime={frontmatter.readingTime}
+                                                isPriority={isPillar}
+                                            />
                                         );
                                     })}
                                 </div>
@@ -107,6 +94,6 @@ export default function BlogPage() {
                         );
                     })}
             </main>
-        </>
+        </div>
     );
 }

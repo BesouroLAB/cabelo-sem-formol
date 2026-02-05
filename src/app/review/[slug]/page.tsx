@@ -1,164 +1,145 @@
 import { notFound } from 'next/navigation';
-import { ChevronRight, FlaskConical, AlertTriangle, Check, X } from 'lucide-react';
 import { getReviewBySlug } from '@/lib/data';
 import CSFScoreBox from '@/components/CSFScoreBox';
 import HardwarePairWidget from '@/components/HardwarePairWidget';
-import AffiliateToast from '@/components/AffiliateToast';
+import ProductStickyBar from '@/components/ProductStickyBar';
+import ProsConsTable from '@/components/ProsConsTable';
 import Link from 'next/link';
+import { ArrowLeft, Share2, CheckCircle, ChevronDown } from 'lucide-react';
 
-export default function ReviewPage({ params }: { params: { slug: string } }) {
-    // In Next 15 params is async but in 14 it's just props usually, but let's handle as standard content
-    const review = getReviewBySlug(params.slug);
+export default async function ReviewPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
+    const review = getReviewBySlug(slug);
 
     if (!review) {
         notFound();
     }
 
     return (
-        <div className="bg-bg-soft min-h-screen pb-24 font-body">
-            {/* Breadcrumb */}
-            <nav className="bg-white border-b border-gray-100 py-3 px-4">
-                <div className="max-w-3xl mx-auto flex items-center text-xs text-gray-500">
-                    <Link href="/" className="hover:text-primary">Home</Link>
-                    <ChevronRight size={12} className="mx-2" />
-                    <span className="text-gray-900 font-medium truncate">{review.product.name}</span>
+        <div className="bg-slate-950 min-h-screen pb-24">
+            {/* Top Navigation Bar */}
+            <nav className="sticky top-0 z-50 glass border-b-0">
+                <div className="flex items-center p-4 justify-between max-w-md mx-auto">
+                    <div className="text-white flex size-10 shrink-0 items-center justify-center cursor-pointer">
+                        <Link href="/">
+                            <ArrowLeft size={24} />
+                        </Link>
+                    </div>
+                    <h2 className="text-white text-md font-bold leading-tight tracking-[-0.015em] flex-1 text-center font-heading">
+                        CabeloSemFormol
+                    </h2>
+                    <div className="flex w-10 items-center justify-end">
+                        <button className="flex cursor-pointer items-center justify-center text-white hover:text-purple-400">
+                            <Share2 size={20} />
+                        </button>
+                    </div>
                 </div>
             </nav>
 
-            <main className="max-w-3xl mx-auto px-4 py-8">
-
-                {/* Header */}
-                <header className="mb-8">
-                    <h1 className="text-3xl md:text-4xl font-bold font-heading text-gray-900 mb-4 leading-tight">
+            <main className="max-w-md mx-auto pb-32">
+                {/* Headline Section */}
+                <section className="px-4 pt-6">
+                    <h1 className="text-white tracking-tight text-[28px] font-bold leading-tight pb-3 font-heading">
                         {review.title}
                     </h1>
-                    <div className="flex items-center gap-3 text-sm text-gray-500 border-b border-gray-200 pb-8">
-                        <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold text-xs">
+                    {/* Profile Header */}
+                    <div className="flex items-center gap-3 py-4">
+                        <div
+                            className="bg-gradient-to-br from-purple-500 to-pink-500 aspect-square rounded-full h-12 w-12 flex items-center justify-center text-white font-bold text-xs shadow-lg shadow-purple-500/20"
+                        >
                             CSF
                         </div>
-                        <div>
-                            <span className="font-bold text-gray-900 block">{review.author}</span>
-                            <span className="text-xs">Atualizado em {review.publishDate}</span>
+                        <div className="flex flex-col justify-center">
+                            <p className="text-white text-sm font-bold leading-tight flex items-center gap-1">
+                                {review.author}
+                                <CheckCircle size={14} className="text-purple-400" />
+                            </p>
+                            <p className="text-slate-400 text-xs">
+                                Especialista em Tricologia • {review.publishDate}
+                            </p>
                         </div>
                     </div>
-                </header>
+                </section>
 
-                {/* Hero Score */}
-                <CSFScoreBox
-                    score={review.overallScore}
-                    verdict={review.verdict}
-                    safetyScore={review.safetyScore}
-                    straighteningScore={review.straighteningScore}
-                    durabilityScore={review.durabilityScore}
-                />
+                {/* Score Card Section */}
+                <section className="p-4">
+                    <CSFScoreBox
+                        score={review.overallScore}
+                        verdict={review.verdict}
+                        safetyScore={review.safetyScore}
+                        straighteningScore={review.straighteningScore}
+                        durabilityScore={review.durabilityScore}
+                        ctaText="Ver Preço na Amazon"
+                        ctaUrl={review.product.affiliateLink}
+                    />
+                </section>
 
-                {/* Content Body */}
-                <div className="prose prose-lg prose-slate max-w-none">
-                    <p className="text-xl text-gray-700 leading-relaxed mb-8 font-medium">
-                        {review.subtitle}
-                    </p>
-
-                    <h2 className="font-heading text-2xl font-bold text-gray-900 mt-12 mb-6 flex items-center gap-2">
-                        <FlaskConical className="text-science" />
-                        Análise Química
-                    </h2>
-
-                    <div className="bg-blue-50 border-l-4 border-science p-6 rounded-r-xl mb-8">
-                        <div className="grid grid-cols-2 gap-4">
-                            <div>
-                                <span className="block text-xs font-bold text-science uppercase mb-1">pH Medido</span>
-                                <span className="text-2xl font-bold text-gray-900">{review.chemicalData.ph}</span>
-                            </div>
-                            <div>
-                                <span className="block text-xs font-bold text-science uppercase mb-1">Base Ativa</span>
-                                <span className="text-lg font-bold text-gray-900 leading-tight">{review.chemicalData.base}</span>
-                            </div>
-                        </div>
-                        <div className="mt-4 pt-4 border-t border-blue-100">
-                            <span className="block text-xs font-bold text-danger uppercase mb-1">Incompatível Com</span>
-                            <div className="flex flex-wrap gap-2">
-                                {review.chemicalData.incompatible.map(inc => (
-                                    <span key={inc} className="bg-white text-danger px-2 py-1 rounded text-xs font-bold border border-red-100">
-                                        {inc}
-                                    </span>
-                                ))}
-                            </div>
+                {/* TOC Accordion */}
+                <section className="px-4 py-4">
+                    <div className="glass rounded-xl overflow-hidden border-white/10">
+                        <div className="flex items-center justify-between p-4 cursor-pointer hover:bg-white/5 transition-colors">
+                            <span className="font-bold text-sm text-white">Índice do Conteúdo</span>
+                            <ChevronDown size={20} className="text-slate-400" />
                         </div>
                     </div>
+                </section>
 
-                    <p>
-                        Durante nossos testes de bancada, submetemos a <strong className="text-primary">{review.product.name}</strong> a três
-                        ciclos de lavagem térmica. O resultado impressionou pela estabilidade das pontes de dissulfeto.
-                        Diferente de progressivas à base de Formol (que apenas "encapam" o fio), a base de {review.chemicalData.base}
-                        atua no córtex, permitindo modelagem real.
-                    </p>
+                {/* Pros & Cons */}
+                <section className="px-4 py-4">
+                    <ProsConsTable pros={review.pros} cons={review.cons} />
+                </section>
 
-                    {/* HARDWARE WIDGET INSERTION */}
-                    {review.hardwarePair && (
+                {/* Technical Table */}
+                <section className="px-4 py-6">
+                    <h2 className="text-lg font-bold text-white mb-4 font-heading">Especificações Clínicas</h2>
+                    <div className="overflow-hidden glass rounded-xl border-white/10">
+                        <table className="w-full text-left text-sm">
+                            <tbody>
+                                <tr className="border-b border-white/5">
+                                    <td className="px-4 py-4 font-semibold text-slate-400">Componente Ativo</td>
+                                    <td className="px-4 py-4 text-white font-medium">{review.chemicalData.base}</td>
+                                </tr>
+                                <tr className="bg-white/5 border-b border-white/5">
+                                    <td className="px-4 py-4 font-semibold text-slate-400">Nível de pH</td>
+                                    <td className="px-4 py-4 text-white font-medium">{review.chemicalData.ph}</td>
+                                </tr>
+                                <tr className="border-b border-white/5">
+                                    <td className="px-4 py-4 font-semibold text-slate-400">Volume</td>
+                                    <td className="px-4 py-4 text-white font-medium">300ml / 500ml</td>
+                                </tr>
+                                <tr className="bg-white/5">
+                                    <td className="px-4 py-4 font-semibold text-slate-400">Incompatível Com</td>
+                                    <td className="px-4 py-4 text-white font-medium">
+                                        {review.chemicalData.incompatible.join(', ')}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                {/* Hardware Widget */}
+                {review.hardwarePair && (
+                    <section className="px-4 py-4">
                         <HardwarePairWidget
                             title={review.hardwarePair.title}
                             productName={review.hardwarePair.productName}
-                            imageUrl={review.hardwarePair.imageUrl}
-                            linkUrl={review.hardwarePair.linkUrl}
+                            productImage={review.hardwarePair.productImage}
+                            description={review.hardwarePair.description}
+                            ctaText={review.hardwarePair.ctaText}
+                            ctaUrl={review.hardwarePair.ctaUrl}
                         />
-                    )}
-
-                    <h2 className="font-heading text-2xl font-bold text-gray-900 mt-12 mb-6">Prós e Contras</h2>
-                    <div className="grid md:grid-cols-2 gap-6 mb-12">
-                        <div className="bg-green-50 p-6 rounded-xl border border-green-100">
-                            <h3 className="font-bold text-success mb-4 flex items-center gap-2">
-                                <Check size={20} /> Pontos Fortes
-                            </h3>
-                            <ul className="space-y-3">
-                                {review.pros.map(pro => (
-                                    <li key={pro} className="text-sm text-gray-700 flex items-start gap-2">
-                                        <span className="mt-1.5 w-1.5 h-1.5 bg-success rounded-full shrink-0"></span>
-                                        {pro}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-
-                        <div className="bg-red-50 p-6 rounded-xl border border-red-100">
-                            <h3 className="font-bold text-danger mb-4 flex items-center gap-2">
-                                <AlertTriangle size={20} /> Pontos de Atenção
-                            </h3>
-                            <ul className="space-y-3">
-                                {review.cons.map(con => (
-                                    <li key={con} className="text-sm text-gray-700 flex items-start gap-2">
-                                        <span className="mt-1.5 w-1.5 h-1.5 bg-danger rounded-full shrink-0"></span>
-                                        {con}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-
-                    <h2 className="font-heading text-2xl font-bold text-gray-900 mt-12 mb-6">Conclusão</h2>
-                    <p>
-                        Se você busca segurança acima de tudo, este é o produto definitivo. O investimento inicial é alto,
-                        mas o rendimento (média de 15 aplicações) dilui o custo, tornando-a uma opção econômica para profissionais.
-                    </p>
-
-                    <div className="mt-8 p-4 bg-gray-100 rounded-lg text-center">
-                        <a
-                            href={review.product.affiliateLink}
-                            className="inline-block bg-primary hover:bg-violet-700 text-white font-bold py-4 px-12 rounded-full text-lg shadow-xl shadow-violet-200 transition-all active:scale-95"
-                        >
-                            Ver Preço Oficial
-                        </a>
-                        <p className="text-xs text-gray-500 mt-3">Link seguro verificado pela Redação CSF</p>
-                    </div>
-
-                </div>
+                    </section>
+                )}
             </main>
 
-            {/* Sticky Mobile Footer */}
-            <AffiliateToast
+            {/* Sticky Mobile/Desktop Bar */}
+            <ProductStickyBar
                 productName={review.product.name}
                 price={review.product.price}
-                imageUrl={review.product.imageUrl}
-                linkUrl={review.product.affiliateLink}
+                image={review.product.imageUrl}
+                affiliateUrl={review.product.affiliateLink}
+                rating={review.overallScore}
             />
         </div>
     );
