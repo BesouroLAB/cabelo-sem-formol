@@ -12,6 +12,10 @@ export const LINKS_AFILIADO: Record<string, AfiliadoLink> = {
     asin: 'B08XYZ123',
     urlBase: 'https://www.amazon.com.br/dp/B08XYZ123',
   },
+  'fashion-gold': {
+    asin: 'B0FGOLD000', // Placeholder — substituir pelo ASIN real da Fashion Gold
+    urlBase: 'https://www.amazon.com.br/dp/B0FGOLD000',
+  },
   'prohall-select-one': {
     asin: 'B09ABC456',
     urlBase: 'https://www.amazon.com.br/dp/B09ABC456',

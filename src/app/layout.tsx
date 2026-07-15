@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import Link from "next/link";
+import { SITE } from "@/lib/site";
+import { getOrganizationSchema, getWebSiteSchema } from "@/lib/schema";
+import { JsonLd } from "@/components/seo/JsonLd";
 import "./globals.css";
 
 const inter = Inter({
@@ -14,8 +17,39 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Cabelo Sem Formol | A Ciência do Liso Saudável",
-  description: "Dossiês químicos, resenhas e análises das melhores progressivas sem formol do mercado.",
+  metadataBase: new URL(SITE.url),
+  title: {
+    default: `${SITE.name} | ${SITE.tagline}`,
+    template: `%s | ${SITE.name}`,
+  },
+  description: SITE.description,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    siteName: SITE.name,
+    locale: SITE.locale,
+    url: "/",
+    title: `${SITE.name} | ${SITE.tagline}`,
+    description: SITE.description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE.name} | ${SITE.tagline}`,
+    description: SITE.description,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -25,10 +59,12 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="pt-BR"
+      lang={SITE.language}
       className={`${inter.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
+        <JsonLd data={getOrganizationSchema()} />
+        <JsonLd data={getWebSiteSchema()} />
         <header className="border-b border-gray-200 bg-white sticky top-0 z-50">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
             <Link href="/" className="font-serif font-bold text-2xl text-[#1A1A1A] tracking-tight">
@@ -36,12 +72,12 @@ export default function RootLayout({
             </Link>
             <nav className="hidden sm:flex items-center gap-6 text-sm font-semibold text-gray-600">
               <Link href="/progressivas/melhor-progressiva-sem-formol" className="hover:text-[#C2A878] transition-colors">Ranking 2026</Link>
-              <Link href="/" className="hover:text-[#C2A878] transition-colors">Resenhas</Link>
-              <Link href="/" className="hover:text-[#C2A878] transition-colors">Sobre</Link>
+              <Link href="/progressivas" className="hover:text-[#C2A878] transition-colors">Progressivas</Link>
+              <Link href="/sobre" className="hover:text-[#C2A878] transition-colors">Sobre</Link>
             </nav>
           </div>
         </header>
-        
+
         <main className="flex-grow">
           {children}
         </main>
@@ -62,12 +98,14 @@ export default function RootLayout({
             <div className="flex flex-col gap-2 text-sm text-gray-400 font-semibold">
               <span className="text-white font-bold mb-2 uppercase tracking-wider text-xs">Acesso Rápido</span>
               <Link href="/" className="hover:text-white transition-colors">Início</Link>
-              <Link href="/progressivas/borabella-nao-chore-mais" className="hover:text-white transition-colors">Borabella Não Chore Mais</Link>
+              <Link href="/progressivas" className="hover:text-white transition-colors">Progressivas Sem Formol</Link>
+              <Link href="/progressivas/borabella-nao-chore-mais-resenha" className="hover:text-white transition-colors">Borabella Não Chore Mais</Link>
               <Link href="/progressivas/fashion-gold-resenha" className="hover:text-white transition-colors">Fashion Gold</Link>
+              <Link href="/sobre" className="hover:text-white transition-colors">Quem Somos</Link>
             </div>
           </div>
           <div className="max-w-5xl mx-auto px-4 sm:px-6 mt-12 pt-8 border-t border-gray-800 text-xs text-gray-500 flex justify-between items-center">
-            <span>&copy; {new Date().getFullYear()} Cabelo Sem Formol. Todos os direitos reservados.</span>
+            <span>&copy; {new Date().getFullYear()} {SITE.name}. Todos os direitos reservados.</span>
             <span>Feito com 🤍 no Brasil</span>
           </div>
         </footer>

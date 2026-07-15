@@ -1,3 +1,5 @@
+import { absoluteUrl } from '@/lib/site';
+
 export const AUTOR_TIAGO = {
   name: "Tiago Fernandes",
   role: "Curador e Pesquisador Chefe",
@@ -10,7 +12,7 @@ Acostumado a decupar promessas de marketing de inúmeras marcas e tecnologias, T
 
 Além de sua forte atuação no varejo e UX, é desenvolvedor e criador do BesouroLAB e Estúdio & Sabor.`,
   linkedin: "https://www.linkedin.com/in/tiagofernand9s/",
-  fotoUrl: "/autor/tiago-perfil.jpg", // Vamos colocar a foto na pasta public/autor/ depois
+  fotoUrl: "/autor/tiago-perfil.jpg",
   linksSecundarios: [
     "https://www.besourolab.com.br",
     "https://www.estudiosabor.com.br"
@@ -25,12 +27,12 @@ export function getAutorSchema() {
     "@type": "Person",
     "name": AUTOR_TIAGO.name,
     "jobTitle": AUTOR_TIAGO.role,
-    "url": "https://www.cabelosemformol.com.br/sobre",
+    "url": absoluteUrl('/sobre'),
     "sameAs": [
       AUTOR_TIAGO.linkedin,
       ...AUTOR_TIAGO.linksSecundarios
     ],
     "description": AUTOR_TIAGO.bioCurta,
-    "image": `https://www.cabelosemformol.com.br${AUTOR_TIAGO.fotoUrl}`
+    "image": absoluteUrl(AUTOR_TIAGO.fotoUrl)
   };
 }
