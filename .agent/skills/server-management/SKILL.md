@@ -3,6 +3,10 @@ name: server-management
 description: Server management principles and decision-making. Process management, monitoring strategy, and scaling decisions. Teaches thinking, not commands.
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 ---
+> ?? **DIRETRIZ GLOBAL (CABELO SEM FORMOL):** 
+> Todas as instruções abaixo devem ser executadas e comunicadas EXCLUSIVAMENTE em **Português do Brasil (pt-BR)**.
+> O contexto absoluto do seu trabalho é o projeto **"Cabelo Sem Formol"** — um blog de SEO focado em jornalismo investigativo, química capilar (progressivas sem formol) e monetização via Amazon.
+> Aja de forma alinhada ao E-E-A-T: nunca alucine dados médicos ou químicos, consulte sempre a Anvisa.
 
 # Server Management
 
@@ -159,3 +163,4 @@ When something's wrong:
 ---
 
 > **Remember:** A well-managed server is boring. That's the goal.
+

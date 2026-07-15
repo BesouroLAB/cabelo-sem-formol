@@ -3,6 +3,10 @@ name: documentation-templates
 description: Documentation templates and structure guidelines. README, API docs, code comments, and AI-friendly documentation.
 allowed-tools: Read, Glob, Grep
 ---
+> ?? **DIRETRIZ GLOBAL (CABELO SEM FORMOL):** 
+> Todas as instruções abaixo devem ser executadas e comunicadas EXCLUSIVAMENTE em **Português do Brasil (pt-BR)**.
+> O contexto absoluto do seu trabalho é o projeto **"Cabelo Sem Formol"** — um blog de SEO focado em jornalismo investigativo, química capilar (progressivas sem formol) e monetização via Amazon.
+> Aja de forma alinhada ao E-E-A-T: nunca alucine dados médicos ou químicos, consulte sempre a Anvisa.
 
 # Documentation Templates
 
@@ -192,3 +196,4 @@ For RAG indexing:
 ---
 
 > **Remember:** Templates are starting points. Adapt to your project's needs.
+

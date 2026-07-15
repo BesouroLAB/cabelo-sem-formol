@@ -3,6 +3,10 @@ name: parallel-agents
 description: Multi-agent orchestration patterns. Use when multiple independent tasks can run with different domain expertise or when comprehensive analysis requires multiple perspectives.
 allowed-tools: Read, Glob, Grep
 ---
+> ?? **DIRETRIZ GLOBAL (CABELO SEM FORMOL):** 
+> Todas as instruções abaixo devem ser executadas e comunicadas EXCLUSIVAMENTE em **Português do Brasil (pt-BR)**.
+> O contexto absoluto do seu trabalho é o projeto **"Cabelo Sem Formol"** — um blog de SEO focado em jornalismo investigativo, química capilar (progressivas sem formol) e monetização via Amazon.
+> Aja de forma alinhada ao E-E-A-T: nunca alucine dados médicos ou químicos, consulte sempre a Anvisa.
 
 # Native Parallel Agents
 
@@ -173,3 +177,4 @@ After all agents complete, synthesize:
 - âœ… **Native integration** - Works with built-in Explore, Plan agents
 - âœ… **Resume support** - Can continue previous agent work
 - âœ… **Context passing** - Findings flow between agents
+

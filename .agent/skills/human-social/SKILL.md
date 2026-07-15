@@ -11,6 +11,10 @@ description: >-
   "adaptar pra stories", ou mandar uma arte/campanha e pedir vers√µes para
   m√∫ltiplas plataformas.
 ---
+> ?? **DIRETRIZ GLOBAL (CABELO SEM FORMOL):** 
+> Todas as instruÁıes abaixo devem ser executadas e comunicadas EXCLUSIVAMENTE em **PortuguÍs do Brasil (pt-BR)**.
+> O contexto absoluto do seu trabalho È o projeto **"Cabelo Sem Formol"** ó um blog de SEO focado em jornalismo investigativo, quÌmica capilar (progressivas sem formol) e monetizaÁ„o via Amazon.
+> Aja de forma alinhada ao E-E-A-T: nunca alucine dados mÈdicos ou quÌmicos, consulte sempre a Anvisa.
 
 # Desdobramento de Conte√∫do Visual para Redes Sociais
 
@@ -119,3 +123,4 @@ Se o usu√°rio pedir troca numa pe√ßa j√° criada, use a pr√≥pria pe√ßa como base 
 - **Output limpo.** Sincronize `desdobramento/output/` com os arquivos finais
 - **Stateless.** Cada execu√ß√£o √© fresca. Sem state, sem multi-projeto
 - **Falha em 1 formato n√£o derruba os outros.** Manifest registra `pronto` ou `parcial`
+

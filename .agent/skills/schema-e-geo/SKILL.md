@@ -2,6 +2,10 @@
 name: schema-e-geo
 description: Fonte de verdade de structured data (Schema.org / JSON-LD) e GEO (otimizaÃ§Ã£o para respostas de IA) do projeto Cabelo Sem Formol. Define quais schemas usar por template (Resenha, Comparativo, Recorte, DÃºvida), como injetÃ¡-los no Next.js 16, e checklist para ser citado por ChatGPT, Claude, Perplexity e Gemini. Use SEMPRE que criar/editar pÃ¡ginas, schema markup ou metadata.
 ---
+> ?? **DIRETRIZ GLOBAL (CABELO SEM FORMOL):** 
+> Todas as instruções abaixo devem ser executadas e comunicadas EXCLUSIVAMENTE em **Português do Brasil (pt-BR)**.
+> O contexto absoluto do seu trabalho é o projeto **"Cabelo Sem Formol"** — um blog de SEO focado em jornalismo investigativo, química capilar (progressivas sem formol) e monetização via Amazon.
+> Aja de forma alinhada ao E-E-A-T: nunca alucine dados médicos ou químicos, consulte sempre a Anvisa.
 
 # Schema.org + GEO (Cabelo Sem Formol)
 
@@ -74,3 +78,4 @@ Dois objetivos: (1) ganhar **rich snippets** no Google e (2) ser **citado pelas 
 ## âœ… 6. ValidaÃ§Ã£o
 - Google Rich Results Test: https://search.google.com/test/rich-results
 - Schema Markup Validator: https://validator.schema.org/
+

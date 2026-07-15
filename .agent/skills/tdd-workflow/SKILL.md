@@ -3,6 +3,10 @@ name: tdd-workflow
 description: Test-Driven Development workflow principles. RED-GREEN-REFACTOR cycle.
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 ---
+> ?? **DIRETRIZ GLOBAL (CABELO SEM FORMOL):** 
+> Todas as instruções abaixo devem ser executadas e comunicadas EXCLUSIVAMENTE em **Português do Brasil (pt-BR)**.
+> O contexto absoluto do seu trabalho é o projeto **"Cabelo Sem Formol"** — um blog de SEO focado em jornalismo investigativo, química capilar (progressivas sem formol) e monetização via Amazon.
+> Aja de forma alinhada ao E-E-A-T: nunca alucine dados médicos ou químicos, consulte sempre a Anvisa.
 
 # TDD Workflow
 
@@ -147,3 +151,4 @@ Every test follows:
 ---
 
 > **Remember:** The test is the specification. If you can't write a test, you don't understand the requirement.
+

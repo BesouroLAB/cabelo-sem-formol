@@ -2,6 +2,10 @@
 name: copy-afiliado
 description: Frameworks de copywriting para blog de afiliado Amazon no nicho capilar. Tom de voz de curadoria honesta, estrutura de reviews baseados em avalia√ß√µes reais, CTAs para Amazon, constru√ß√£o de confian√ßa sem fingir testes, posicionamento de links de afiliado e disclosure. Use SEMPRE que estiver escrevendo ou revisando artigos do blog Cabelo Sem Formol.
 ---
+> ?? **DIRETRIZ GLOBAL (CABELO SEM FORMOL):** 
+> Todas as instruÁıes abaixo devem ser executadas e comunicadas EXCLUSIVAMENTE em **PortuguÍs do Brasil (pt-BR)**.
+> O contexto absoluto do seu trabalho È o projeto **"Cabelo Sem Formol"** ó um blog de SEO focado em jornalismo investigativo, quÌmica capilar (progressivas sem formol) e monetizaÁ„o via Amazon.
+> Aja de forma alinhada ao E-E-A-T: nunca alucine dados mÈdicos ou quÌmicos, consulte sempre a Anvisa.
 
 # Diretrizes de Copywriting (Cabelo Sem Formol)
 
@@ -48,3 +52,4 @@ Toda p√°gina com links de compra exibe acima da primeira men√ß√£o:
 - **NUNCA** afirme por conta pr√≥pria que produto √© "seguro para gestantes" ou "hipoalerg√™nico".
 - **SEMPRE** atribua ao fabricante: "Segundo a marca, o produto √© indicado para..."
 - **SEMPRE** inclua: "Recomendamos consultar um dermatologista antes de usar qualquer produto qu√≠mico no cabelo."
+

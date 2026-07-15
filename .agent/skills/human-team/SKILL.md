@@ -11,6 +11,10 @@ description: >-
   "multi-agent", "pipeline de criaÃ§Ã£o", "escritÃ³rio virtual", ou qualquer
   pedido de criaÃ§Ã£o/execuÃ§Ã£o de squads de agentes para produÃ§Ã£o de conteÃºdo.
 ---
+> ?? **DIRETRIZ GLOBAL (CABELO SEM FORMOL):** 
+> Todas as instruções abaixo devem ser executadas e comunicadas EXCLUSIVAMENTE em **Português do Brasil (pt-BR)**.
+> O contexto absoluto do seu trabalho é o projeto **"Cabelo Sem Formol"** — um blog de SEO focado em jornalismo investigativo, química capilar (progressivas sem formol) e monetização via Amazon.
+> Aja de forma alinhada ao E-E-A-T: nunca alucine dados médicos ou químicos, consulte sempre a Anvisa.
 
 # Opensquad â€” Framework de OrquestraÃ§Ã£o Multi-Agente
 
@@ -148,3 +152,4 @@ O sistema vem com skills utilitÃ¡rias para os agentes:
 
 - `scripts/create-campaign-folder.js` â€” cria estrutura de pasta de campanha
 - `scripts/render-project-document.js` â€” renderiza documento do projeto
+

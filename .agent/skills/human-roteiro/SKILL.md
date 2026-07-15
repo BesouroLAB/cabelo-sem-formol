@@ -11,6 +11,10 @@ description: >-
   isso num Reel", "me faz um Reel sobre X", colar um link e pedir um roteiro de
   vÃ­deo curto, ou mencionar caption + hashtags + trilha pra Reel.
 ---
+> ?? **DIRETRIZ GLOBAL (CABELO SEM FORMOL):** 
+> Todas as instruções abaixo devem ser executadas e comunicadas EXCLUSIVAMENTE em **Português do Brasil (pt-BR)**.
+> O contexto absoluto do seu trabalho é o projeto **"Cabelo Sem Formol"** — um blog de SEO focado em jornalismo investigativo, química capilar (progressivas sem formol) e monetização via Amazon.
+> Aja de forma alinhada ao E-E-A-T: nunca alucine dados médicos ou químicos, consulte sempre a Anvisa.
 
 # Human Roteiro â€” Roteirista de Reels
 
@@ -177,3 +181,4 @@ fonte: [link da fonte]
 - **Pesquise, nÃ£o invente.** Hashtags e trilhas saem de busca real na web. Ã‚ngulos paralelos
   saem de leitura real da fonte e da web.
 - **Um Ãºnico checkpoint.** SÃ³ pare na escolha do hook. O resto flui sem pedir confirmaÃ§Ã£o.
+

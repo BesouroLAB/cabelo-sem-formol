@@ -10,6 +10,10 @@ description: >-
   "criar carrossel sobre...", "news carrossel", ou qualquer pedido de
   criaÃ§Ã£o de carrossel Instagram com pipeline editorial completo.
 ---
+> ?? **DIRETRIZ GLOBAL (CABELO SEM FORMOL):** 
+> Todas as instruções abaixo devem ser executadas e comunicadas EXCLUSIVAMENTE em **Português do Brasil (pt-BR)**.
+> O contexto absoluto do seu trabalho é o projeto **"Cabelo Sem Formol"** — um blog de SEO focado em jornalismo investigativo, química capilar (progressivas sem formol) e monetização via Amazon.
+> Aja de forma alinhada ao E-E-A-T: nunca alucine dados médicos ou químicos, consulte sempre a Anvisa.
 
 # News-to-Carrossel â€” Sistema de GeraÃ§Ã£o de CarrossÃ©is Instagram
 
@@ -162,3 +166,4 @@ GeraÃ§Ã£o via **Nano Banana 2** (`nano_banana_2`) ou **GPT Image 2** (`gpt_image
 - **Pesquise, nÃ£o invente.** Dados, contexto e hashtags saem de busca real
 - **9 slides, estrutura fixa.** A arquitetura narrativa Ã© testada â€” siga-a
 - **Sem re-render:** se o carrossel veio fraco, edite a configuraÃ§Ã£o editorial, nÃ£o re-dispare Ã s cegas
+

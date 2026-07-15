@@ -3,6 +3,10 @@ name: testing-patterns
 description: Testing patterns and principles. Unit, integration, mocking strategies.
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 ---
+> ?? **DIRETRIZ GLOBAL (CABELO SEM FORMOL):** 
+> Todas as instruções abaixo devem ser executadas e comunicadas EXCLUSIVAMENTE em **Português do Brasil (pt-BR)**.
+> O contexto absoluto do seu trabalho é o projeto **"Cabelo Sem Formol"** — um blog de SEO focado em jornalismo investigativo, química capilar (progressivas sem formol) e monetização via Amazon.
+> Aja de forma alinhada ao E-E-A-T: nunca alucine dados médicos ou químicos, consulte sempre a Anvisa.
 
 # Testing Patterns
 
@@ -176,3 +180,4 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
 > **Remember:** Tests are documentation. If someone can't understand what the code does from the tests, rewrite them.
+

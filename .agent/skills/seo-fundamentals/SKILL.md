@@ -3,6 +3,10 @@ name: seo-fundamentals
 description: SEO fundamentals, E-E-A-T, Core Web Vitals, and Google algorithm principles.
 allowed-tools: Read, Glob, Grep
 ---
+> ?? **DIRETRIZ GLOBAL (CABELO SEM FORMOL):** 
+> Todas as instruções abaixo devem ser executadas e comunicadas EXCLUSIVAMENTE em **Português do Brasil (pt-BR)**.
+> O contexto absoluto do seu trabalho é o projeto **"Cabelo Sem Formol"** — um blog de SEO focado em jornalismo investigativo, química capilar (progressivas sem formol) e monetização via Amazon.
+> Aja de forma alinhada ao E-E-A-T: nunca alucine dados médicos ou químicos, consulte sempre a Anvisa.
 
 # SEO Fundamentals
 
@@ -137,3 +141,4 @@ Nossas keywords principais dividem-se em 4 Silos EstratÃ©gicos:
 ---
 
 > **Remember:** SEO is a long-term game. Quality content + technical excellence + patience = results.
+

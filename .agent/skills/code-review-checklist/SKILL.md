@@ -3,6 +3,10 @@ name: code-review-checklist
 description: Code review guidelines covering code quality, security, and best practices.
 allowed-tools: Read, Glob, Grep
 ---
+> ?? **DIRETRIZ GLOBAL (CABELO SEM FORMOL):** 
+> Todas as instruções abaixo devem ser executadas e comunicadas EXCLUSIVAMENTE em **Português do Brasil (pt-BR)**.
+> O contexto absoluto do seu trabalho é o projeto **"Cabelo Sem Formol"** — um blog de SEO focado em jornalismo investigativo, química capilar (progressivas sem formol) e monetização via Amazon.
+> Aja de forma alinhada ao E-E-A-T: nunca alucine dados médicos ou químicos, consulte sempre a Anvisa.
 
 # Code Review Checklist
 
@@ -107,3 +111,4 @@ const data: UserData = ...
 // Questions use â“
 â“ QUESTION: What happens if user is null here?
 ```
+

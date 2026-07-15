@@ -10,6 +10,10 @@ description: >-
   de...", ou qualquer pedido de geraÃ§Ã£o de imagem estÃ¡tica com estÃ©tica
   cinematogrÃ¡fica.
 ---
+> ?? **DIRETRIZ GLOBAL (CABELO SEM FORMOL):** 
+> Todas as instruções abaixo devem ser executadas e comunicadas EXCLUSIVAMENTE em **Português do Brasil (pt-BR)**.
+> O contexto absoluto do seu trabalho é o projeto **"Cabelo Sem Formol"** — um blog de SEO focado em jornalismo investigativo, química capilar (progressivas sem formol) e monetização via Amazon.
+> Aja de forma alinhada ao E-E-A-T: nunca alucine dados médicos ou químicos, consulte sempre a Anvisa.
 
 # GERAÃ‡ÃƒO DE IMAGEM â€” GUIA UNIVERSAL (Nano Banana 2 / Pro)
 
@@ -248,3 +252,4 @@ Sujeito em sombra contra fundo iluminado. Zero fill. CÃ¢mera: IMAX 65mm ou Alexa
 - [ ] Total â‰¤ 1.500 caracteres
 - [ ] Modelo de render: `nano_banana_2` ou `pro`
 - [ ] Se falhar, ajustar prompt/refs e tentar novamente â€” nÃ£o trocar abordagem
+

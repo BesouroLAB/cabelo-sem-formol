@@ -3,6 +3,10 @@ name: geo-fundamentals
 description: Generative Engine Optimization for AI search engines (ChatGPT, Claude, Perplexity).
 allowed-tools: Read, Glob, Grep
 ---
+> ?? **DIRETRIZ GLOBAL (CABELO SEM FORMOL):** 
+> Todas as instruções abaixo devem ser executadas e comunicadas EXCLUSIVAMENTE em **Português do Brasil (pt-BR)**.
+> O contexto absoluto do seu trabalho é o projeto **"Cabelo Sem Formol"** — um blog de SEO focado em jornalismo investigativo, química capilar (progressivas sem formol) e monetização via Amazon.
+> Aja de forma alinhada ao E-E-A-T: nunca alucine dados médicos ou químicos, consulte sempre a Anvisa.
 
 # GEO Fundamentals
 
@@ -153,4 +157,5 @@ How AI engines select content to cite:
 | Script | Purpose | Command |
 |--------|---------|---------|
 | `scripts/geo_checker.py` | GEO audit (AI citation readiness) | `python scripts/geo_checker.py <project_path>` |
+
 

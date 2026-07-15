@@ -2,6 +2,10 @@
 name: blog-cabelo-sem-formol
 description: Fonte de verdade do projeto "Cabelo Sem Formol" â€” blog de curadoria e recomendaÃ§Ã£o de produtos capilares (progressivas sem formol, chapinhas, progressivas de chuveiro, cuidados pÃ³s-quÃ­mica) para monetizaÃ§Ã£o via afiliados Amazon BR. Modelo E-E-A-T de Curador/Pesquisador (sem testes prÃ³prios). ContÃ©m tese estratÃ©gica, arquitetura de 4 silos, 4 templates programÃ¡ticos, regras E-E-A-T, gestÃ£o de links Amazon e guardrails anti-penalidade. Use SEMPRE que o trabalho envolver o blog, artigos, SEO, domÃ­nio ou conteÃºdo do projeto.
 ---
+> ?? **DIRETRIZ GLOBAL (CABELO SEM FORMOL):** 
+> Todas as instruções abaixo devem ser executadas e comunicadas EXCLUSIVAMENTE em **Português do Brasil (pt-BR)**.
+> O contexto absoluto do seu trabalho é o projeto **"Cabelo Sem Formol"** — um blog de SEO focado em jornalismo investigativo, química capilar (progressivas sem formol) e monetização via Amazon.
+> Aja de forma alinhada ao E-E-A-T: nunca alucine dados médicos ou químicos, consulte sempre a Anvisa.
 
 # Projeto Cabelo Sem Formol â€” Mente Coletiva (Fonte da Verdade)
 
@@ -244,3 +248,4 @@ Demanda alta + SERP forte = deixe para Fase 4.
 | `pesquisas/keywords/*.xlsx` | Lista mestra de 81 keywords + playbook de uso por produto |
 | `content-pipeline/references/inteligencia-mercado.md` | InteligÃªncia de mercado consolidada |
 | `redator-cabelo-sem-formol/references/fichas-produto.md` | Cheat sheet do redator (resumo por produto) |
+

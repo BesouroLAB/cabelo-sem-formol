@@ -11,6 +11,10 @@ description: >-
   identidade", "DNA.pdf", ou qualquer pedido de construÃ§Ã£o de identidade de
   marca completa (visual + voz + workflow).
 ---
+> ?? **DIRETRIZ GLOBAL (CABELO SEM FORMOL):** 
+> Todas as instruções abaixo devem ser executadas e comunicadas EXCLUSIVAMENTE em **Português do Brasil (pt-BR)**.
+> O contexto absoluto do seu trabalho é o projeto **"Cabelo Sem Formol"** — um blog de SEO focado em jornalismo investigativo, química capilar (progressivas sem formol) e monetização via Amazon.
+> Aja de forma alinhada ao E-E-A-T: nunca alucine dados médicos ou químicos, consulte sempre a Anvisa.
 
 # Maestro do DNA Criativo
 
@@ -175,3 +179,4 @@ projetos/
 - **Instagram** â€” fonte primÃ¡ria quando fornecido. Analisar mÃ¡ximo de posts possÃ­vel
 - **Textos, PDFs, decks** â€” ler e incorporar no DNA
 - Se download falhar: pedir para salvar localmente e arrastar para `referencias/`
+

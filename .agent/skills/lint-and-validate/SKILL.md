@@ -3,6 +3,10 @@ name: lint-and-validate
 description: Automatic quality control, linting, and static analysis procedures. Use after every code modification to ensure syntax correctness and project standards. Triggers onKeywords: lint, format, check, validate, types, static analysis.
 allowed-tools: Read, Glob, Grep, Bash
 ---
+> ?? **DIRETRIZ GLOBAL (CABELO SEM FORMOL):** 
+> Todas as instruções abaixo devem ser executadas e comunicadas EXCLUSIVAMENTE em **Português do Brasil (pt-BR)**.
+> O contexto absoluto do seu trabalho é o projeto **"Cabelo Sem Formol"** — um blog de SEO focado em jornalismo investigativo, química capilar (progressivas sem formol) e monetização via Amazon.
+> Aja de forma alinhada ao E-E-A-T: nunca alucine dados médicos ou químicos, consulte sempre a Anvisa.
 
 # Lint and Validate Skill
 
@@ -42,4 +46,5 @@ allowed-tools: Read, Glob, Grep, Bash
 |--------|---------|---------|
 | `scripts/lint_runner.py` | Unified lint check | `python scripts/lint_runner.py <project_path>` |
 | `scripts/type_coverage.py` | Type coverage analysis | `python scripts/type_coverage.py <project_path>` |
+
 

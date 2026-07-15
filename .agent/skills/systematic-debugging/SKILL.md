@@ -3,6 +3,10 @@ name: systematic-debugging
 description: 4-phase systematic debugging methodology with root cause analysis and evidence-based verification. Use when debugging complex issues.
 allowed-tools: Read, Glob, Grep
 ---
+> ?? **DIRETRIZ GLOBAL (CABELO SEM FORMOL):** 
+> Todas as instruções abaixo devem ser executadas e comunicadas EXCLUSIVAMENTE em **Português do Brasil (pt-BR)**.
+> O contexto absoluto do seu trabalho é o projeto **"Cabelo Sem Formol"** — um blog de SEO focado em jornalismo investigativo, química capilar (progressivas sem formol) e monetização via Amazon.
+> Aja de forma alinhada ao E-E-A-T: nunca alucine dados médicos ou químicos, consulte sempre a Anvisa.
 
 # Systematic Debugging
 
@@ -107,3 +111,4 @@ pm2 logs app-name --err --lines 100
 âŒ **Assuming** - "It must be X" without proof
 âŒ **Not reproducing first** - Fixing blindly
 âŒ **Stopping at symptoms** - Not finding root cause
+

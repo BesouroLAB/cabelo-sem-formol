@@ -5,6 +5,10 @@ allowed-tools: Read, Write, Edit
 version: 2.0
 priority: CRITICAL
 ---
+> ?? **DIRETRIZ GLOBAL (CABELO SEM FORMOL):** 
+> Todas as instruções abaixo devem ser executadas e comunicadas EXCLUSIVAMENTE em **Português do Brasil (pt-BR)**.
+> O contexto absoluto do seu trabalho é o projeto **"Cabelo Sem Formol"** — um blog de SEO focado em jornalismo investigativo, química capilar (progressivas sem formol) e monetização via Amazon.
+> Aja de forma alinhada ao E-E-A-T: nunca alucine dados médicos ou químicos, consulte sempre a Anvisa.
 
 # Clean Code - Pragmatic AI Coding Standards
 
@@ -198,4 +202,5 @@ File to edit: UserService.ts
 > ðŸ”´ **VIOLATION:** Running script and ignoring output = FAILED task.
 > ðŸ”´ **VIOLATION:** Auto-fixing without asking = Not allowed.
 > ðŸ”´ **Rule:** Always READ output â†’ SUMMARIZE â†’ ASK â†’ then fix.
+
 

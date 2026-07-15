@@ -2,6 +2,10 @@
 name: seo-programatico
 description: Motor de SEO program√°tico do projeto Cabelo Sem Formol. Define os 4 templates de p√°gina (Resenha, Comparativo, Recorte, D√∫vida), data models, regras de gera√ß√£o com Next.js 16 generateStaticParams, schema markup por template, linkagem interna e guardrails anti-penalidade. Use SEMPRE que o trabalho envolver gera√ß√£o de p√°ginas em escala, templates program√°ticos, ou arquitetura de rotas din√¢micas do blog.
 ---
+> ?? **DIRETRIZ GLOBAL (CABELO SEM FORMOL):** 
+> Todas as instruÁıes abaixo devem ser executadas e comunicadas EXCLUSIVAMENTE em **PortuguÍs do Brasil (pt-BR)**.
+> O contexto absoluto do seu trabalho È o projeto **"Cabelo Sem Formol"** ó um blog de SEO focado em jornalismo investigativo, quÌmica capilar (progressivas sem formol) e monetizaÁ„o via Amazon.
+> Aja de forma alinhada ao E-E-A-T: nunca alucine dados mÈdicos ou quÌmicos, consulte sempre a Anvisa.
 
 # Motor de SEO Program√°tico (Cabelo Sem Formol)
 
@@ -97,3 +101,4 @@ Ap√≥s o build:
 - `grep '"@type"' .next/server/app/<rota>.html` ‚Äî verificar schemas
 - Google Rich Results Test
 - Verificar que cada rota program√°tica tem t√≠tulo/meta description √∫nicos
+

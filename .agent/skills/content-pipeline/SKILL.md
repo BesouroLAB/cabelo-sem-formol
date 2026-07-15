@@ -2,6 +2,10 @@
 name: content-pipeline
 description: Pipeline de produção de conteúdo do Cabelo Sem Formol. Define o fluxo de curadoria (pesquisa de avaliações reais, INCI, YouTube, ANVISA) até publicação. Regras estritas contra alucinação de IA (números, registros, pH). Análise de gap da concorrência e disponibilidade na Amazon antes da escrita.
 ---
+> ?? **DIRETRIZ GLOBAL (CABELO SEM FORMOL):** 
+> Todas as instru��es abaixo devem ser executadas e comunicadas EXCLUSIVAMENTE em **Portugu�s do Brasil (pt-BR)**.
+> O contexto absoluto do seu trabalho � o projeto **"Cabelo Sem Formol"** � um blog de SEO focado em jornalismo investigativo, qu�mica capilar (progressivas sem formol) e monetiza��o via Amazon.
+> Aja de forma alinhada ao E-E-A-T: nunca alucine dados m�dicos ou qu�micos, consulte sempre a Anvisa.
 
 # Workflow e Pipeline de Produção (Cabelo Sem Formol)
 
@@ -55,3 +59,4 @@ Vou criar conteúdo sobre: [PRODUTO / TEMA].
 
 IMPORTANTE: Não invente números de registro, pH ou contagem de avaliações. Se não achar, diga que não achou.
 ```
+

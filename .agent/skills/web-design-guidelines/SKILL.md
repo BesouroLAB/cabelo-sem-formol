@@ -6,6 +6,10 @@ metadata:
   version: "1.0.0"
   argument-hint: <file-or-pattern>
 ---
+> ?? **DIRETRIZ GLOBAL (CABELO SEM FORMOL):** 
+> Todas as instruções abaixo devem ser executadas e comunicadas EXCLUSIVAMENTE em **Português do Brasil (pt-BR)**.
+> O contexto absoluto do seu trabalho é o projeto **"Cabelo Sem Formol"** — um blog de SEO focado em jornalismo investigativo, química capilar (progressivas sem formol) e monetização via Amazon.
+> Aja de forma alinhada ao E-E-A-T: nunca alucine dados médicos ou químicos, consulte sempre a Anvisa.
 
 # Web Interface Guidelines
 
@@ -55,3 +59,4 @@ If no files specified, ask the user which files to review.
 3. AUDIT    â†’ Run web-design-guidelines review â† YOU ARE HERE
 4. FIX      â†’ Address findings from audit
 ```
+
