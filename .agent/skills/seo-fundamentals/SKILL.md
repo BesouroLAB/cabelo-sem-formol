@@ -12,12 +12,12 @@ allowed-tools: Read, Glob, Grep
 
 ## 1. E-E-A-T Framework
 
-| Principle | Signals |
-|-----------|---------|
-| **Experience** | First-hand knowledge, real examples |
-| **Expertise** | Credentials, depth of knowledge |
-| **Authoritativeness** | Backlinks, mentions, industry recognition |
-| **Trustworthiness** | HTTPS, transparency, accurate info |
+| Principle | Signals (Cabelo Sem Formol) |
+|-----------|-----------------------------|
+| **Experience** | Dossiês detalhados, prós e contras reais e baseados em depoimentos (sem fingir testes caseiros se não houve). |
+| **Expertise** | Autoria clara: Tiago Fernandes (16 anos Magalu, pós em UX), análise rigorosa de INCI e Portarias da Anvisa. |
+| **Authoritativeness** | Referências à Anvisa e sites oficiais, posicionamento firme contra produtos irregulares (ex: Japinha). |
+| **Trustworthiness** | Disclaimer de afiliado no topo, redirecionamento de produtos ruins para alternativas seguras. |
 
 ---
 
@@ -49,6 +49,16 @@ allowed-tools: Read, Glob, Grep
 | Page speed | Core Web Vital |
 | Mobile-friendly | Ranking factor |
 | Clean URLs | Crawlability |
+
+---
+
+## 3.5 Estratégia de Palavras-Chave (Cabelo Sem Formol)
+
+Nossas keywords principais dividem-se em 4 Silos Estratégicos:
+1. **Fundo de Funil (Transacionais):** "comprar [nome do produto]", "resenha [nome do produto]", "qual a melhor progressiva sem formol", "fashion gold vale a pena".
+2. **Meio de Funil (Dúvidas Técnicas):** "como identificar formol", "ácido glioxílico faz mal", "diferença entre progressiva ácida e alcalina".
+3. **Hardware (Acessórios):** "melhor chapinha de titânio", "secador profissional para progressiva".
+4. **Pós-Química:** "cronograma capilar para progressiva", "shampoo sem sulfato", "acidificação".
 
 ---
 

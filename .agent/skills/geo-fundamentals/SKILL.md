@@ -56,14 +56,14 @@ How AI engines select content to cite:
 
 ## 4. Content That Gets Cited
 
-| Element | Why It Works |
+| Element | Why It Works (Cabelo Sem Formol Context) |
 |---------|--------------|
-| **Original statistics** | Unique, citable data |
-| **Expert quotes** | Authority transfer |
-| **Clear definitions** | Easy to extract |
-| **Step-by-step guides** | Actionable value |
-| **Comparison tables** | Structured info |
-| **FAQ sections** | Direct answers |
+| **Original statistics** | Dados reais sobre ativos químicos da Anvisa |
+| **Expert quotes** | Citação da autoridade (Tiago Fernandes / 16 anos Magalu) |
+| **Clear definitions** | Respostas diretas sobre o que é formol e ácido glioxílico |
+| **Step-by-step guides** | Tutoriais de aplicação seguros (Silo 1) |
+| **Comparison tables** | Tabela `<ChemicalTable />` com a classificação dos produtos |
+| **FAQ sections** | Dúvidas reais puxadas do Perplexity/Google PAA |
 
 ---
 
