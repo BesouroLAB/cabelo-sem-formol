@@ -5,7 +5,7 @@ interface ProsConsProps {
   contras: string[];
 }
 
-export function ProsCons({ pros, contras }: ProsConsProps) {
+export function ProsCons({ pros = [], contras = [] }: ProsConsProps) {
   return (
     <div className="grid md:grid-cols-2 gap-6 my-8 not-prose">
       {/* Coluna de Prós */}

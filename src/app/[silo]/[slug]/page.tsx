@@ -2,6 +2,9 @@ import { getArticleBySlug, getAllArticlePaths } from '@/lib/mdx';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { notFound } from 'next/navigation';
 import { ProsCons } from '@/components/mdx/ProsCons';
+import { ChemicalTable } from '@/components/mdx/ChemicalTable';
+import { ArticleHeader } from '@/components/mdx/ArticleHeader';
+import { AffiliateToast } from '@/components/mdx/AffiliateToast';
 
 interface PageProps {
   params: Promise<{
@@ -30,6 +33,9 @@ export async function generateMetadata({ params }: PageProps) {
 // Mapeamento de componentes customizados disponíveis no MDX
 const mdxComponents = {
   ProsCons,
+  ChemicalTable,
+  ArticleHeader,
+  AffiliateToast,
 };
 
 export default async function ArticlePage({ params }: PageProps) {
@@ -42,28 +48,7 @@ export default async function ArticlePage({ params }: PageProps) {
 
   return (
     <article className="max-w-3xl mx-auto py-12 px-4 sm:px-6">
-      <header className="mb-8">
-        <h1 className="text-4xl font-bold tracking-tight text-gray-900 mb-4">
-          {article.frontmatter.title}
-        </h1>
-        <div className="flex items-center text-sm text-gray-500 space-x-4">
-          <time dateTime={article.frontmatter.date}>
-            Publicado em: {new Date(article.frontmatter.date).toLocaleDateString('pt-BR')}
-          </time>
-          <span>Por {article.frontmatter.author}</span>
-        </div>
-      </header>
-
-      {/* Componente para Disclosure de Afiliados Obrigatório */}
-      <div className="bg-amber-50 border-l-4 border-amber-400 p-4 mb-8">
-        <p className="text-sm text-amber-700">
-          <strong>Aviso de Transparência:</strong> Este artigo contém links de afiliado. 
-          Se você comprar através dos nossos links, podemos receber uma comissão sem custo extra para você. 
-          Isso nos ajuda a manter o site.
-        </p>
-      </div>
-
-      <div className="prose prose-lg prose-amber max-w-none">
+      <div className="prose prose-lg max-w-none prose-headings:font-serif prose-a:text-[#C2A878] prose-a:no-underline hover:prose-a:underline">
         <MDXRemote source={article.content} components={mdxComponents} />
       </div>
     </article>
