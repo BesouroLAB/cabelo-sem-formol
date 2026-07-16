@@ -123,4 +123,18 @@ O portal intercepta rotas do tipo `/go/[slug]`, realiza a busca no dicionário `
 2.  **Limpar Conteúdo:** Apagar os arquivos de markdown antigos da pasta `content/` e criar novas pastas correspondentes aos novos 4 silos selecionados.
 3.  **Mapear Keywords:** Gerar a planilha mestra de 80 keywords do novo nicho, dividindo-as em 6 lotes lógicos.
 4.  **Configurar Afiliados:** Limpar o dicionário `afiliados.ts` e registrar a nova `AMAZON_TAG`.
-5.  **Produção em Lotes:** Alimentar as pastas MDX respeitando o limite saudável de postagem e garantindo que o build rode com sucesso (`npm run build`).
+5. **Produção em Lotes:** Alimentar as pastas MDX respeitando o limite saudável de postagem e garantindo que o build rode com sucesso (`npm run build`).
+
+---
+
+## 7. 🧠 Protocolo de Ingestão de Dados (Deep Dives Obrigatórias)
+
+Para evitar alucinações técnicas e respeitar o **E-E-A-T (Expertise, Authoritativeness, Trustworthiness)** exigido pelo Google, o agente de IA **NUNCA deve iniciar a redação de um novo lote ou silo no escuro**.
+
+### O Agente deve obrigatoriamente solicitar ao usuário:
+1.  **Dossiês de Produtos:** Fichas técnicas, ativos químicos reais (ex: sulfito vs ácidos), e links ou resoluções da Anvisa sobre o produto.
+2.  **Alertas Clínicos e Reclamações:** Dados sobre o que as consumidoras reclamam (frizz, cheiro, queda de cabelo, quebras) e relatos reais de fóruns ou redes sociais.
+3.  **Mapeamento de ASINs (Amazon):** A lista de links confiáveis e vendedores recomendados na Amazon antes de registrar as chaves em `afiliados.ts`.
+
+> [!IMPORTANT]
+> Se o usuário pedir para iniciar um novo nicho ou lote sem fornecer esses dados brutos, o agente deve **parar e listar as perguntas críticas (Deep Dives)** necessárias para blindar a qualidade técnica do conteúdo.
