@@ -53,16 +53,16 @@ Recomendação: manter CTA "com aviso" explicando a variação de nome + bloco d
 | 5 | `/progressivas/fashion-gold-resenha` **(upgrade)** | A · `review` | Ver decisão ⚠️ acima · adicionar `faq:` + bloco alternativa Borabella | `seo/dossie-investigativo-fashion-gold.md` + `produtos/dossie-fashion-gold-ybera.md` | "fashion gold vale a pena" |
 
 ### Lote 2 — Dúvidas de alto tráfego do Silo 1 (Template D) — 6 artigos
-Resposta direta no 1º parágrafo (featured snippet) + `faq:` + links para money pages do Lote 1.
+**LOTE 2 FINALIZADO ✔ (15/07/2026)** - Artigos focados em YMYL, com schema FAQPage e linkagem interna.
 
-| # | URL | KW alvo | Fonte |
-|---|---|---|---|
-| 6 | `/progressivas/progressiva-sem-formol-faz-mal` | "progressiva sem formol faz mal" (Alta demanda) | `seo/pesquisa-ymyl-alisamento.md` ⚠️ YMYL |
-| 7 | `/progressivas/progressiva-sem-formol-estraga-o-cabelo` | "…estraga o cabelo" | idem |
-| 8 | `/progressivas/progressiva-organica-tem-formol` | "progressiva orgânica tem formol" | `produtos/inci-anvisa-atualizacao.md` |
-| 9 | `/progressivas/progressiva-sem-formol-tem-glioxilico` | "…tem glioxílico" (tema quente: restrição Anvisa) | idem |
-| 10 | `/progressivas/quanto-tempo-dura` | "quanto tempo dura progressiva sem formol" | dossiês de produto |
-| 11 | `/progressivas/progressiva-organica-vs-sem-formol` | "progressiva orgânica ou sem formol diferença" | `seo/guia-alisamento-sem-formol.md` |
+| # | URL | KW alvo | Fonte | Status |
+|---|---|---|---|---|
+| 6 | `/progressivas/progressiva-sem-formol-faz-mal` | "progressiva sem formol faz mal" (Alta demanda) | `seo/pesquisa-ymyl-alisamento.md` ⚠️ YMYL | ✅ Lote 2 |
+| 7 | `/progressivas/progressiva-sem-formol-estraga-o-cabelo` | "…estraga o cabelo" | idem | ✅ Lote 2 |
+| 8 | `/progressivas/progressiva-organica-tem-formol` | "progressiva orgânica tem formol" | `produtos/inci-anvisa-atualizacao.md` | ✅ Lote 2 |
+| 9 | `/progressivas/progressiva-sem-formol-tem-glioxilico` | "…tem glioxílico" (tema quente: restrição Anvisa) | idem | ✅ Lote 2 |
+| 10 | `/progressivas/quanto-tempo-dura` | "quanto tempo dura progressiva sem formol" | dossiês de produto | ✅ Lote 2 |
+| 11 | `/progressivas/progressiva-organica-vs-sem-formol` | "progressiva orgânica ou sem formol diferença" | `seo/guia-alisamento-sem-formol.md` | ✅ Lote 2 |
 
 ### Lote 3 — Comparativos + recortes do Silo 1 (Templates B e C) — 7 artigos
 | # | URL | Template | Nota |
