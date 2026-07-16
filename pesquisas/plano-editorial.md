@@ -106,16 +106,18 @@ Recomendação: manter CTA "com aviso" explicando a variação de nome + bloco d
 | 34 | `/chapinhas/melhor-chapinha-profissional` | Pilar do Silo 2 | *Ranking das 3 acima* | ✅ Lote 5 |
 
 ### Lote 6 — Silos 3 e 4 (abrem os silos) — 8 artigos
-| # | URL | Template | Nota |
+**LOTE 6 FINALIZADO ✔ (15/07/2026)** - Criação dos silos de Cuidados e Chuveiro concluída.
+
+| # | URL | Tipo | Status |
 |---|---|---|---|
-| 35 | `/cuidados/cronograma-capilar-pos-progressiva` | **Pilar (P1!)** | Único pilar de baixa concorrência — pode sair já. Fonte: `seo/faq-cuidados-pos-progressiva.md` |
-| 36 | `/cuidados/como-fazer-progressiva-durar-mais` | D | Linka money pages silos 1–2 |
-| 37 | `/cuidados/o-que-nao-pode-depois-da-progressiva` | D | |
-| 38 | `/cuidados/shampoo-sem-sulfato-progressiva` | C | Monetiza shampoos (cadastrar ASINs) |
-| 39 | `/chuveiro/hidraliso-resenha` | A · `review` | "Queridinha do Instagram" |
-| 40 | `/chuveiro/progressiva-de-chuveiro-alisa-mesmo` | D | Expectativa: alinhamento ≠ alisamento |
-| 41 | `/chuveiro/chuveiro-vs-salao` | D | |
-| 42 | `/chuveiro/la-bella-liss-resenha` | A · `review` | Ângulo: a "baratinha" funciona? |
+| 35 | `/cuidados/cronograma-capilar-pos-progressiva` | Pilar P1 | ✅ Lote 6 |
+| 36 | `/cuidados/como-fazer-progressiva-durar-mais` | Dúvida | ✅ Lote 6 |
+| 37 | `/cuidados/o-que-nao-pode-depois-da-progressiva` | Dúvida / YMYL | ✅ Lote 6 |
+| 38 | `/cuidados/shampoo-sem-sulfato-progressiva` | Money (Monetiza shampoos) | ✅ Lote 6 |
+| 39 | `/chuveiro/hidraliso-resenha` | Resenha (A) | ✅ Lote 6 |
+| 40 | `/chuveiro/progressiva-de-chuveiro-alisa-mesmo` | Dúvida YMYL | ✅ Lote 6 |
+| 41 | `/chuveiro/chuveiro-vs-salao` | Dúvida | ✅ Lote 6 |
+| 42 | `/chuveiro/la-bella-liss-resenha` | Resenha (A) | ✅ Lote 6 |
 
 ---
 

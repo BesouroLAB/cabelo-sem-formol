@@ -36,6 +36,27 @@ export const LINKS_AFILIADO: Record<string, AfiliadoLink> = {
     asin: 'B09QNQFMYL', // Prancha/Chapinha Taiff Style Pro Titanium (Bivolt)
     urlBase: 'https://www.amazon.com.br/dp/B09QNQFMYL',
   },
+  // Chapinhas Profissionais (Lote 5)
+  'lizze-extreme': {
+    asin: 'B07CN23JR1',
+    urlBase: 'https://www.amazon.com.br/dp/B07CN23JR1',
+  },
+  'lizze-extreme-slim': {
+    asin: 'B08K3KRCC6',
+    urlBase: 'https://www.amazon.com.br/dp/B08K3KRCC6',
+  },
+  'lizze-supreme': {
+    asin: 'B0B5Y1TXST',
+    urlBase: 'https://www.amazon.com.br/dp/B0B5Y1TXST',
+  },
+  'mq-pro-480': {
+    asin: 'B085F3WX23',
+    urlBase: 'https://www.amazon.com.br/dp/B085F3WX23',
+  },
+  'mq-pro-480-slim': {
+    asin: 'B0CCJWZ8P7',
+    urlBase: 'https://www.amazon.com.br/dp/B0CCJWZ8P7',
+  },
   // ⚠️ PENDENTES: sem ASIN verificado ainda. Interim honesto: link de BUSCA da Amazon
   // com a tag (funciona para afiliado). Substituir por /dp/ASIN após conferir
   // vendedor confiável, conforme playbook ("Verificar antes de CTA").
