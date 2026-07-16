@@ -51,14 +51,15 @@ Cada artigo gerado pelo agente de escrita deve obedecer rigidamente a um dos qua
 *   **Objetivo:** Capturar o usuário na etapa final de decisão de compra (com o cartão na mão na dúvida entre dois produtos).
 *   **Estrutura:** Comparação direta dividida em critérios (ex: desempenho, custo, ergonomia), tabela de especificações, veredito apontando o vencedor e CTA duplo para ambos.
 
-### 🅲️ Template C: Perfis de Cabelo / Casos de Uso
-*   **Objetivo:** Filtrar o público por características individuais do usuário (ex: *"Cabelo fino"*, *"Loiras"*).
+### 🅲️ Template C: Perfis de Usuário / Casos de Uso Específicos
+*   **Objetivo:** Filtrar o público por características ou necessidades individuais do usuário.
 *   **Estrutura:** Foco em resolver a dor específica daquele segmento, sugerindo o melhor produto do silo correspondente para aquela característica.
+*   *Exemplos genéricos:* "Melhor Roteador para Apartamentos Grandes", "Melhor Cafeteira para Escritório", "Melhor Chapinha para Cabelo Fino".
 
-### 🅳️ Template D: Investigativos / Dúvidas Frequentes (YMYL)
-*   **Objetivo:** Construir autoridade científica e responder dúvidas de alto volume de buscas (ex: *"Progressiva faz mal?"*).
-*   **Estrutura:** Linguagem técnica e jornalística baseada em estudos e dados regulatórios, respondendo à pergunta diretamente no primeiro parágrafo.
-*   **Conversão:** Redirecionar o tráfego ("interim honesto") para as Money Pages seguras (ex: *"Se o produto X é perigoso, a alternativa segura é o produto Y"*).
+### 🅳️ Template D: Investigativos / Dúvidas Frequentes (YMYL / Segurança)
+*   **Objetivo:** Construir autoridade técnica e responder dúvidas de alto volume de buscas.
+*   **Estrutura:** Linguagem técnica e jornalística baseada em especificações, estudos ou dados de órgãos oficiais, respondendo à pergunta diretamente no primeiro parágrafo.
+*   **Conversão:** Redirecionar o tráfego ("interim honesto") para as Money Pages recomendadas e seguras.
 
 ---
 
@@ -123,7 +124,7 @@ O portal intercepta rotas do tipo `/go/[slug]`, realiza a busca no dicionário `
 2.  **Limpar Conteúdo:** Apagar os arquivos de markdown antigos da pasta `content/` e criar novas pastas correspondentes aos novos 4 silos selecionados.
 3.  **Mapear Keywords:** Gerar a planilha mestra de 80 keywords do novo nicho, dividindo-as em 6 lotes lógicos.
 4.  **Configurar Afiliados:** Limpar o dicionário `afiliados.ts` e registrar a nova `AMAZON_TAG`.
-5. **Produção em Lotes:** Alimentar as pastas MDX respeitando o limite saudável de postagem e garantindo que o build rode com sucesso (`npm run build`).
+5.  **Produção em Lotes:** Alimentar as pastas MDX respeitando o limite saudável de postagem e garantindo que o build rode com sucesso (`npm run build`).
 
 ---
 
@@ -136,22 +137,22 @@ Esta regra é o **critério de entrada (Gatekeeper)** para iniciar qualquer proj
 ### 7.1 Como as Deep Dives Devem Ser Entregues
 Toda a documentação crua de pesquisa trazida pelo usuário deve ser salva na pasta `pesquisas/` do repositório, dividida em duas subpastas:
 *   `pesquisas/produtos/`: Contendo dossiês individuais de cada produto em formato Markdown (ex: `dossie-produto-x.md`).
-*   `pesquisas/seo/`: Contendo levantamentos de intenções de busca, análises YMYL, e painéis de reclamações (ex: `pesquisa-ymyl.md`).
+*   `pesquisas/seo/`: Contendo levantamentos de intenções de busca, análises de conformidade e painéis de reclamações (ex: `pesquisa-dores-do-usuario.md`).
 
 ---
 
 ### 7.2 Prompts Prontos de Pesquisa (Para o Usuário Copiar e Rodar)
 
-O usuário deve rodar os seguintes prompts em mecanismos de busca assistidos por IA (como o Perplexity AI, Claude Pro ou GPT-4o com busca ativada) para obter os dados de entrada corretos:
+O usuário deve rodar os seguintes prompts em mecanismos de busca assistidos por IA (como o Perplexity AI, Claude Pro ou GPT-4o com busca ativada) para obter os dados de entrada corretos.
 
-#### 📋 Prompt 1: Dossiê Químico e Regulatório do Produto (Anvisa/INCI)
-> "Busque na internet e em bases regulatórias (como o portal da Anvisa) informações completas sobre o produto **[NOME DO PRODUTO]** da marca **[MARCA]**. Me dê: (1) O CNPJ do fabricante e se o produto possui registro de Grau 2 ou apenas notificação de Grau 1, (2) A lista completa de ingredientes (INCI/Composição Química), (3) Qual o princípio ativo real responsável pelo resultado (ex: ácido lático, glioxílico, tioglicolato, etc.), (4) Se há histórico de alertas de segurança, suspensões ou falsificações relatadas desse produto."
+#### 📋 Prompt 1: Dossiê Técnico e Regulatório do Produto
+> "Busque na internet, manuais de fabricação e bases regulatórias (como órgãos de defesa do consumidor, Anvisa, Inmetro, etc.) informações completas sobre o produto **[NOME DO PRODUTO]** da marca **[MARCA]**. Me dê: (1) O CNPJ do fabricante e o status de homologação/registro, (2) A lista completa de especificações técnicas, materiais de composição ou tabela nutricional/INCI, (3) Qual a tecnologia ou princípio ativo real responsável pela entrega do resultado principal do produto, (4) Se há histórico de recalls, suspensões ou relatos de pirataria no mercado nacional."
 
-#### 💬 Prompt 2: Dores do Usuário e Alertas Clínicos (Reddit/Reclame Aqui)
-> "Pesquise em fóruns do Reddit Brasil (como r/CabelosDoBrasil, r/ClubeDaLuluzinha), grupos do Facebook e portais como o Reclame Aqui sobre as principais reclamações e problemas reais das consumidoras ao usarem **[NOME DO PRODUTO / CATEGORIA]**. Detalhe: (1) O que as pessoas dizem que dá errado (ex: ressecamento, cheiro residual ruim, quebra, incompatibilidade química), (2) Quais são as maiores frustrações pós-uso e (3) Em quais condições de cabelo o produto falha (ex: fios finos, descoloridos)."
+#### 💬 Prompt 2: Dores do Usuário e Reclamações Reais (Fóruns/Comunidades)
+> "Pesquise em fóruns do Reddit Brasil, comunidades verticais especializadas, redes sociais (TikTok/Instagram) e portais de reclamação sobre os principais problemas reais enfrentados pelos consumidores ao usarem **[NOME DO PRODUTO / CATEGORIA]**. Detalhe: (1) O que as pessoas dizem que dá errado ou quebra fácil, (2) Quais são as maiores frustrações no pós-compra e (3) Em quais condições ou cenários de uso o produto falha ou não é recomendado (ex: em ambientes úmidos, para usuários novatos, etc.)."
 
 #### 🔍 Prompt 3: Mapeamento de Perguntas Recorrentes (AEO - Voice Search)
-> "Busque nas caixas de 'People Also Ask' (As Pessoas Também Perguntam) do Google Brasil e em redes sociais (TikTok/Instagram) as dúvidas mais recorrentes sobre **[TEMA DO SILO / EX: progressiva de chuveiro ou chapinhas profissionais]**. Me traga as 10 perguntas mais buscadas no formato exato de Pergunta e Resposta direta, baseando-se em fontes reais com citações."
+> "Busque nas caixas de 'People Also Ask' (As Pessoas Também Perguntam) do Google Brasil e em redes de busca as dúvidas mais recorrentes sobre **[TEMA DO SILO / EX: cafeteiras de cápsula, roteadores mesh ou chapinhas profissionais]**. Me traga as 10 perguntas mais buscadas no formato exato de Pergunta e Resposta direta, baseando-se em fontes reais e manuais técnicos."
 
 ---
 
