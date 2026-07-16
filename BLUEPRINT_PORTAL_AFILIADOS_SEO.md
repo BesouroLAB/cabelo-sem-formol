@@ -131,10 +131,33 @@ O portal intercepta rotas do tipo `/go/[slug]`, realiza a busca no dicionário `
 
 Para evitar alucinações técnicas e respeitar o **E-E-A-T (Expertise, Authoritativeness, Trustworthiness)** exigido pelo Google, o agente de IA **NUNCA deve iniciar a redação de um novo lote ou silo no escuro**.
 
-### O Agente deve obrigatoriamente solicitar ao usuário:
-1.  **Dossiês de Produtos:** Fichas técnicas, ativos químicos reais (ex: sulfito vs ácidos), e links ou resoluções da Anvisa sobre o produto.
-2.  **Alertas Clínicos e Reclamações:** Dados sobre o que as consumidoras reclamam (frizz, cheiro, queda de cabelo, quebras) e relatos reais de fóruns ou redes sociais.
-3.  **Mapeamento de ASINs (Amazon):** A lista de links confiáveis e vendedores recomendados na Amazon antes de registrar as chaves em `afiliados.ts`.
+Esta regra é o **critério de entrada (Gatekeeper)** para iniciar qualquer projeto sob esta arquitetura.
 
-> [!IMPORTANT]
-> Se o usuário pedir para iniciar um novo nicho ou lote sem fornecer esses dados brutos, o agente deve **parar e listar as perguntas críticas (Deep Dives)** necessárias para blindar a qualidade técnica do conteúdo.
+### 7.1 Como as Deep Dives Devem Ser Entregues
+Toda a documentação crua de pesquisa trazida pelo usuário deve ser salva na pasta `pesquisas/` do repositório, dividida em duas subpastas:
+*   `pesquisas/produtos/`: Contendo dossiês individuais de cada produto em formato Markdown (ex: `dossie-produto-x.md`).
+*   `pesquisas/seo/`: Contendo levantamentos de intenções de busca, análises YMYL, e painéis de reclamações (ex: `pesquisa-ymyl.md`).
+
+---
+
+### 7.2 Prompts Prontos de Pesquisa (Para o Usuário Copiar e Rodar)
+
+O usuário deve rodar os seguintes prompts em mecanismos de busca assistidos por IA (como o Perplexity AI, Claude Pro ou GPT-4o com busca ativada) para obter os dados de entrada corretos:
+
+#### 📋 Prompt 1: Dossiê Químico e Regulatório do Produto (Anvisa/INCI)
+> "Busque na internet e em bases regulatórias (como o portal da Anvisa) informações completas sobre o produto **[NOME DO PRODUTO]** da marca **[MARCA]**. Me dê: (1) O CNPJ do fabricante e se o produto possui registro de Grau 2 ou apenas notificação de Grau 1, (2) A lista completa de ingredientes (INCI/Composição Química), (3) Qual o princípio ativo real responsável pelo resultado (ex: ácido lático, glioxílico, tioglicolato, etc.), (4) Se há histórico de alertas de segurança, suspensões ou falsificações relatadas desse produto."
+
+#### 💬 Prompt 2: Dores do Usuário e Alertas Clínicos (Reddit/Reclame Aqui)
+> "Pesquise em fóruns do Reddit Brasil (como r/CabelosDoBrasil, r/ClubeDaLuluzinha), grupos do Facebook e portais como o Reclame Aqui sobre as principais reclamações e problemas reais das consumidoras ao usarem **[NOME DO PRODUTO / CATEGORIA]**. Detalhe: (1) O que as pessoas dizem que dá errado (ex: ressecamento, cheiro residual ruim, quebra, incompatibilidade química), (2) Quais são as maiores frustrações pós-uso e (3) Em quais condições de cabelo o produto falha (ex: fios finos, descoloridos)."
+
+#### 🔍 Prompt 3: Mapeamento de Perguntas Recorrentes (AEO - Voice Search)
+> "Busque nas caixas de 'People Also Ask' (As Pessoas Também Perguntam) do Google Brasil e em redes sociais (TikTok/Instagram) as dúvidas mais recorrentes sobre **[TEMA DO SILO / EX: progressiva de chuveiro ou chapinhas profissionais]**. Me traga as 10 perguntas mais buscadas no formato exato de Pergunta e Resposta direta, baseando-se em fontes reais com citações."
+
+---
+
+### 7.3 Fluxo de Inicialização de Projeto (Checklist do Agente)
+
+1.  **Bloqueio de Redação:** O agente recebe a instrução do novo nicho.
+2.  **Solicitação de Inputs:** O agente envia os 3 prompts acima e aguarda as respostas.
+3.  **Salvamento dos Dados:** As respostas são gravadas em arquivos na pasta `pesquisas/`.
+4.  **Assinatura de Entrada:** Somente após os arquivos estarem presentes na pasta `pesquisas/` o agente está autorizado a gerar a planilha de keywords e iniciar o Lote 1 de artigos.
