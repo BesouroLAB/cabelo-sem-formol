@@ -47,6 +47,30 @@ export const SILOS: Record<string, SiloConfig> = {
       'Análises químicas de progressivas sem formol: lemos a bula (INCI), checamos a Anvisa e cruzamos centenas de avaliações reais antes de recomendar.',
     categoryLabel: 'Análise Química',
   },
+  chapinhas: {
+    slug: 'chapinhas',
+    title: 'Chapinhas Profissionais',
+    headline: 'Chapinhas para Progressiva: Análises Técnicas Honestas',
+    description:
+      'Resenhas técnicas de chapinhas profissionais: titânio vs cerâmica, temperatura real por tipo de fio e o que centenas de compradoras relatam na prática.',
+    categoryLabel: 'Análise Técnica',
+  },
+  chuveiro: {
+    slug: 'chuveiro',
+    title: 'Progressiva de Chuveiro',
+    headline: 'Progressiva de Chuveiro: Funciona ou É Mito?',
+    description:
+      'Investigamos as progressivas de chuveiro: o que a fórmula realmente faz, expectativa realista de resultado e o que as compradoras relatam após o uso.',
+    categoryLabel: 'Investigação',
+  },
+  cuidados: {
+    slug: 'cuidados',
+    title: 'Cuidados Pós-Química',
+    headline: 'Cuidados Pós-Progressiva: Faça o Liso Durar Mais',
+    description:
+      'Cronograma capilar, shampoos sem sulfato e acidificação: guias práticos para manter o resultado da progressiva por mais tempo, sem achismo.',
+    categoryLabel: 'Guia Prático',
+  },
 };
 
 export function getSiloConfig(slug: string): SiloConfig | null {

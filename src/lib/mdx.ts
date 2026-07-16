@@ -18,6 +18,11 @@ export interface ProductFrontmatter {
   image?: string;
 }
 
+export interface FaqItem {
+  q: string;
+  a: string;
+}
+
 export interface ArticleFrontmatter {
   title: string;
   description: string;
@@ -26,12 +31,17 @@ export interface ArticleFrontmatter {
   /** Data da última atualização editorial (ISO). Se ausente, usa `date`. */
   updated?: string;
   author: string;
-  /** "review" gera schema Review+Product; qualquer outro valor gera Article */
+  /** "review" gera schema Product+review; qualquer outro valor gera Article */
   schemaType?: 'review' | 'article';
   /** Caminho da imagem de capa relativo a /public (ex: /images/posts/foo.jpg) */
   image?: string;
   /** Produto avaliado (obrigatório quando schemaType === "review") */
   product?: ProductFrontmatter;
+  /**
+   * FAQ do artigo (3 a 7 itens): gera o schema FAQPage E a seção visível
+   * renderizada no fim do artigo — sempre espelhados (exigência do Google).
+   */
+  faq?: FaqItem[];
   [key: string]: unknown;
 }
 
@@ -62,6 +72,55 @@ function parseDate(value: string | undefined, fallback: Date): Date {
 }
 
 /**
+ * GUARDA DE PADRÃO SEO — roda em toda leitura de artigo (portanto no build).
+ * Se um artigo violar o contrato de frontmatter validado no Rich Results Test,
+ * o build FALHA com mensagem clara. Isso garante que todo artigo futuro siga
+ * exatamente o mesmo padrão de dados estruturados.
+ */
+function validateFrontmatter(fm: ArticleFrontmatter, file: string): void {
+  const errors: string[] = [];
+
+  if (!fm.title) errors.push('campo obrigatório "title" ausente');
+  if (!fm.description) errors.push('campo obrigatório "description" ausente');
+  if (!fm.author) errors.push('campo obrigatório "author" ausente');
+  if (!fm.date) {
+    errors.push('campo obrigatório "date" ausente (formato YYYY-MM-DD)');
+  } else if (isNaN(new Date(fm.date).getTime())) {
+    errors.push(`"date" inválida: "${fm.date}" (use YYYY-MM-DD)`);
+  }
+  if (fm.updated && isNaN(new Date(fm.updated).getTime())) {
+    errors.push(`"updated" inválida: "${fm.updated}" (use YYYY-MM-DD)`);
+  }
+
+  if (fm.schemaType === 'review') {
+    if (!fm.product?.name) {
+      errors.push('schemaType "review" exige "product.name" (alimenta o schema Product+review)');
+    }
+    if (fm.product?.rating !== undefined) {
+      const r = fm.product.rating;
+      if (typeof r !== 'number' || r < 0 || r > 5) {
+        errors.push(`"product.rating" deve ser número entre 0 e 5 (recebido: ${r})`);
+      }
+    }
+  }
+
+  if (fm.faq !== undefined) {
+    if (!Array.isArray(fm.faq) || fm.faq.some((item) => !item?.q || !item?.a)) {
+      errors.push('"faq" deve ser lista de itens { q, a } preenchidos');
+    } else if (fm.faq.length < 3 || fm.faq.length > 7) {
+      errors.push(`"faq" deve ter entre 3 e 7 itens (recebido: ${fm.faq.length})`);
+    }
+  }
+
+  if (errors.length > 0) {
+    throw new Error(
+      `[PADRÃO SEO VIOLADO] ${file}:\n  - ${errors.join('\n  - ')}\n` +
+        `Consulte o contrato de frontmatter em .agent/skills/seo-programatico/SKILL.md`
+    );
+  }
+}
+
+/**
  * Retorna todos os silos disponíveis (pastas dentro de content/)
  */
 export function getSilos(): string[] {
@@ -85,6 +144,8 @@ export function getArticlesBySilo(silo: string): ArticleData[] {
     const fileContent = fs.readFileSync(filePath, 'utf-8');
     const { data, content } = matter(fileContent);
     const frontmatter = data as ArticleFrontmatter;
+
+    validateFrontmatter(frontmatter, `content/${silo}/${filename}`);
 
     const publishedAt = parseDate(frontmatter.date, fs.statSync(filePath).mtime);
     const lastModified = parseDate(frontmatter.updated, publishedAt);

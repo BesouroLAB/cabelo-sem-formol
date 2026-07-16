@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getArticleBySlug, getAllArticlePaths } from '@/lib/mdx';
 import { getSiloConfig } from '@/lib/site';
-import { getArticleSchema, getBreadcrumbSchema } from '@/lib/schema';
+import { getArticleSchema, getBreadcrumbSchema, getFaqSchema } from '@/lib/schema';
+import { FaqSection } from '@/components/mdx/FaqSection';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { notFound } from 'next/navigation';
@@ -79,6 +80,7 @@ export default async function ArticlePage({ params }: PageProps) {
 
   const siloConfig = getSiloConfig(silo);
   const siloTitle = siloConfig?.title ?? silo;
+  const faq = article.frontmatter.faq;
 
   return (
     <article className="max-w-3xl mx-auto py-12 px-4 sm:px-6">
@@ -90,6 +92,7 @@ export default async function ArticlePage({ params }: PageProps) {
           { name: article.frontmatter.title, path: `/${silo}/${slug}` },
         ])}
       />
+      {faq && faq.length > 0 && <JsonLd data={getFaqSchema(faq)} />}
 
       <nav aria-label="Breadcrumb" className="text-xs text-gray-500 mb-8 uppercase tracking-wider">
         <Link href="/" className="hover:text-[#C2A878] transition-colors">Início</Link>
@@ -100,6 +103,9 @@ export default async function ArticlePage({ params }: PageProps) {
       <div className="prose prose-lg max-w-none prose-headings:font-serif prose-a:text-[#C2A878] prose-a:no-underline hover:prose-a:underline">
         <MDXRemote source={article.content} components={mdxComponents} />
       </div>
+
+      {/* FAQ visível espelhando o schema FAQPage (mesma fonte de dados: frontmatter.faq) */}
+      {faq && faq.length > 0 && <FaqSection faq={faq} />}
     </article>
   );
 }

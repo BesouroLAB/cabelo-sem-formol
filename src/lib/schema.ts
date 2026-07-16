@@ -1,5 +1,5 @@
 import { SITE, absoluteUrl, SiloConfig } from '@/lib/site';
-import { ArticleData } from '@/lib/mdx';
+import { ArticleData, FaqItem } from '@/lib/mdx';
 import { AUTOR_TIAGO, getAutorSchema } from '@/data/autor';
 
 /**
@@ -63,6 +63,26 @@ export function getProfilePageSchema() {
     isPartOf: { '@id': WEBSITE_ID },
     // Referencia por @id — o Person completo já é emitido globalmente no layout raiz
     mainEntity: { '@id': AUTHOR_ID },
+  };
+}
+
+/**
+ * FAQPage — gerado a partir do campo `faq` do frontmatter.
+ * A seção visível do artigo (componente FaqSection) usa os MESMOS dados,
+ * garantindo o espelhamento schema ↔ página que o Google exige.
+ */
+export function getFaqSchema(faq: FaqItem[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a,
+      },
+    })),
   };
 }
 
