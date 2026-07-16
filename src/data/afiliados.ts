@@ -57,6 +57,56 @@ export const LINKS_AFILIADO: Record<string, AfiliadoLink> = {
     asin: 'B0CCJWZ8P7',
     urlBase: 'https://www.amazon.com.br/dp/B0CCJWZ8P7',
   },
+  // Shampoos Pós-Química Sem Sulfato (Lote 6)
+  'shampoo-eudora-siage': {
+    asin: 'B081BDG3ZZ',
+    urlBase: 'https://www.amazon.com.br/dp/B081BDG3ZZ',
+  },
+  'shampoo-prohall-select-care': {
+    asin: 'B0CF9L6ZND',
+    urlBase: 'https://www.amazon.com.br/dp/B0CF9L6ZND',
+  },
+  'shampoo-bio-extratus-abacate': {
+    asin: 'B0777RP57F',
+    urlBase: 'https://www.amazon.com.br/dp/B0777RP57F',
+  },
+  'shampoo-trivitt-pos-quimica': {
+    asin: 'B0892HNP86',
+    urlBase: 'https://www.amazon.com.br/dp/B0892HNP86',
+  },
+  'shampoo-lola-quimica': {
+    asin: 'B07F2G58NP',
+    urlBase: 'https://www.amazon.com.br/dp/B07F2G58NP',
+  },
+  'shampoo-haskell-pos-progressiva': {
+    asin: 'B07N8Z7PZ1',
+    urlBase: 'https://www.amazon.com.br/dp/B07N8Z7PZ1',
+  },
+  'shampoo-borabella-day-use': {
+    asin: 'B07XN626B5',
+    urlBase: 'https://www.amazon.com.br/dp/B07XN626B5',
+  },
+  'shampoo-acquaflora-pos': {
+    asin: 'B07XQ3KCR7',
+    urlBase: 'https://www.amazon.com.br/dp/B07XQ3KCR7',
+  },
+  'shampoo-amend-expertise': {
+    asin: 'B078N2K29W',
+    urlBase: 'https://www.amazon.com.br/dp/B078N2K29W',
+  },
+  'shampoo-felps-quiabo': {
+    asin: 'B0B5PFFNSF',
+    urlBase: 'https://www.amazon.com.br/dp/B0B5PFFNSF',
+  },
+  // Progressivas de Chuveiro (Lote 6 / Fase 3)
+  'hidraliso-oficial': {
+    asin: 'B0B8QC98V7',
+    urlBase: 'https://www.amazon.com.br/dp/B0B8QC98V7',
+  },
+  'la-bella-liss': {
+    asin: 'B07NWZGLYV',
+    urlBase: 'https://www.amazon.com.br/dp/B07NWZGLYV',
+  },
   // ⚠️ PENDENTES: sem ASIN verificado ainda. Interim honesto: link de BUSCA da Amazon
   // com a tag (funciona para afiliado). Substituir por /dp/ASIN após conferir
   // vendedor confiável, conforme playbook ("Verificar antes de CTA").

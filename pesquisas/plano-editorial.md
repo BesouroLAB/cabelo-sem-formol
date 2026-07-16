@@ -121,12 +121,17 @@ Recomendação: manter CTA "com aviso" explicando a variação de nome + bloco d
 
 ---
 
-## FASE 3 — Pilares + restante (após lotes 1–6, com a cauda linkando)
-
-- `/progressivas/melhor-progressiva-sem-formol` — **reescrever o pilar de verdade** (ranking completo, tabela comparativa, linka todas as resenhas). Atualizar ano no título a cada janeiro.
-- `/chapinhas/melhor-chapinha-para-progressiva` (pilar silo 2)
-- `/chuveiro/progressiva-de-chuveiro-funciona` (pilar silo 3) + `/chuveiro/melhores-progressivas-de-chuveiro`
-- Recortes P2 restantes (cabelo curto, henê, profissional, chapinha cabelo fino/cacheado, ⚠️ grávida — YMYL máximo cuidado)
+## FASE 3 — Pilares + restante — **FINALIZADA ✔ (15/07/2026)**
+- `/progressivas/melhor-progressiva-sem-formol` — **Reescrita completa do pilar concluída** (ranking completo, linkando 14 satélites).
+- `/chuveiro/progressiva-de-chuveiro-funciona` — **Pilar do silo de chuveiro criado**.
+- `/chuveiro/melhores-progressivas-de-chuveiro` — **Ranking de chuveiro criado**.
+- Recortes P2 restantes criados:
+  - `/progressivas/progressiva-para-gravidas` (Gestantes) ✅
+  - `/progressivas/compatibilidade-progressiva-e-hene` (Henê) ✅
+  - `/progressivas/cabelo-curto-com-progressiva` (Corte curto) ✅
+  - `/progressivas/progressiva-profissional` (Profissional vs Farmácia) ✅
+  - `/chapinhas/chapinha-cabelo-fino` (Fios finos) ✅
+  - `/chapinhas/chapinha-cabelo-cacheado` (Modelagem de cachos) ✅
 
 ## FASE 4 — Termos-cabeça (mês 3+, só com autoridade acumulada)
 "melhor progressiva sem formol" · "melhor chapinha profissional" · "melhor chapinha de titânio" · variações "2026".
