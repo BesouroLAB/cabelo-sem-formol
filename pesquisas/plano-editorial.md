@@ -78,34 +78,32 @@ Recomendação: manter CTA "com aviso" explicando a variação de nome + bloco d
 | 18 | `/progressivas/progressiva-para-loiras-sem-amarelar` | C | Dor real: amarelar/chumbar | ✅ Lote 3 |
 
 ### Lote 4 — Autoridade + investigativos do Silo 1 — 8 artigos
-SEM CTA (exceto indicado). Todos redirecionam para a money page Borabella.
+**LOTE 4 FINALIZADO ✔ (15/07/2026)** - Foco E-E-A-T (Segurança), SEM CTA (exceto os 2 primeiros com ressalvas). Todos redirecionam para a money page Borabella.
 
-| # | URL | Playbook | Fonte |
-|---|---|---|---|
-| 19 | `/progressivas/salvatore-resenha` | Autoridade · CTA c/ aviso se ASIN confiável (tanino; cheiro; laranja em loiro) | `produtos/dossie-salvatore-blue-gold.md` |
-| 20 | `/progressivas/adlux-premium-pro-20-resenha` | Alerta intermediário · CTA c/ aviso (advertência de queda no rótulo) | `produtos/dossie-adlux-premium-pro-20.md` |
-| 21 | `/progressivas/onixx-progressiva-resenha` | Cauteloso · SEM CTA · **absorve "bio lizz"** (é Bioliss da Onixx — não criar página própria) | `produtos/dossie-onixx.md` + `produtos/nota-resolucao-bio-lizz.md` |
-| 22 | `/progressivas/let-me-be-pro-repair-resenha` | Cauteloso · SEM CTA (falsificação no ML; qual pote é sem formol) | `produtos/dossie-let-me-be.md` |
-| 23 | `/progressivas/tyrrel-oxireduct-resenha` | Investigativo · SEM CTA (INCI contradiz "orgânico": glioxal + DMDM) | `produtos/dossie-tyrrel-oxireduct.md` |
-| 24 | `/progressivas/japinha-organica-resenha` | Investigativo · SEM CTA (sem registro Anvisa localizado; claim de gravidez perigoso ⚠️) | `produtos/dossie-japinha-organica.md` |
-| 25 | `/progressivas/maria-escandalosa-resenha` | Alerta · SEM CTA (relatos de cheiro de formol; sem SAC) | `produtos/dossie-maria-escandalosa.md` |
-| 26 | ~~bio-lizz-resenha~~ | **Desambiguação — NÃO criar.** Keyword dobra na resenha Onixx (#21) | — |
+| # | URL | Playbook | Fonte | Status |
+|---|---|---|---|---|
+| 19 | `/progressivas/salvatore-resenha` | Autoridade · CTA c/ aviso se ASIN confiável (tanino; cheiro; laranja em loiro) | `produtos/dossie-salvatore-blue-gold.md` | ✅ Lote 4 |
+| 20 | `/progressivas/adlux-premium-pro-20-resenha` | Alerta intermediário · CTA c/ aviso (advertência de queda no rótulo) | `produtos/dossie-adlux-premium-pro-20.md` | ✅ Lote 4 |
+| 21 | `/progressivas/onixx-progressiva-resenha` | Cauteloso · SEM CTA · **absorve "bio lizz"** | `produtos/dossie-onixx.md` + `produtos/nota-resolucao-bio-lizz.md` | ✅ Lote 4 |
+| 22 | `/progressivas/let-me-be-pro-repair-resenha` | Cauteloso · SEM CTA (falsificação no ML; qual pote é sem formol) | `produtos/dossie-let-me-be.md` | ✅ Lote 4 |
+| 23 | `/progressivas/tyrrel-oxireduct-resenha` | Investigativo · SEM CTA (INCI contradiz "orgânico": glioxal + DMDM) | `produtos/dossie-tyrrel-oxireduct.md` | ✅ Lote 4 |
+| 24 | `/progressivas/japinha-organica-resenha` | Investigativo · SEM CTA (sem registro Anvisa localizado; claim de gravidez perigoso ⚠️) | `produtos/dossie-japinha-organica.md` | ✅ Lote 4 |
+| 25 | `/progressivas/maria-escandalosa-resenha` | Alerta · SEM CTA (relatos de cheiro de formol; sem SAC) | `produtos/dossie-maria-escandalosa.md` | ✅ Lote 4 |
+| 26 | ~~bio-lizz-resenha~~ | **Desambiguação — NÃO criar.** Keyword dobra na resenha Onixx (#21) | — | ❌ Abortado |
 
 ### Lote 5 — Silo 2: Chapinhas (abre o silo) — 8 artigos
-Criar pasta `content/chapinhas/` (o hub e o sitemap nascem sozinhos).
-Fontes: `seo/dossie-chapinhas-profissionais.md` + `seo/analise-chapinha-profissional.md`.
-ASINs já cadastrados: `/go/taiff-style-pro-chapinha`, `/go/taiff-style-pro-secador`.
+**LOTE 5 FINALIZADO ✔ (15/07/2026)** - Criação do Silo de Chapinhas com resenhas de hardware de alto ticket e guias de segurança YMYL.
 
-| # | URL | Template | Nota |
-|---|---|---|---|
-| 27 | `/chapinhas/taiff-style-pro-titanium-resenha` | A · `review` | Melhor geral nos rankings; money page |
-| 28 | `/chapinhas/lizze-extreme-resenha` | A · `review` | 250°C reais — alerta fio fino/descolorido |
-| 29 | `/chapinhas/mq-pro-480-titanium-resenha` | A · `review` | 17 níveis — favorita p/ loiras |
-| 30 | `/chapinhas/temperatura-chapinha-progressiva` | D | Tabela de temperatura por fio — muito buscado |
-| 31 | `/chapinhas/titanio-ou-ceramica` | D | Dúvida central do nicho |
-| 32 | `/chapinhas/lizze-extreme-vs-mq-480` | B | Temperatura fixa vs regulagem |
-| 33 | `/chapinhas/temperatura-cabelo-descolorido` | D | |
-| 34 | `/chapinhas/diferenca-chapinha-comum-progressiva` | D | |
+| # | URL | Tipo | Fonte | Status |
+|---|---|---|---|---|
+| 27 | `/chapinhas/lizze-extreme-resenha` | Money (Review) | `pesquisas/produtos/chapinhas.md` | ✅ Lote 5 |
+| 28 | `/chapinhas/mq-pro-480-resenha` | Money (Review) | `pesquisas/produtos/chapinhas.md` | ✅ Lote 5 |
+| 29 | `/chapinhas/lizze-supreme-resenha` | Money (Review) | `pesquisas/produtos/chapinhas.md` | ✅ Lote 5 |
+| 30 | `/chapinhas/lizze-extreme-vs-mq-pro-480` | Comparativo | `pesquisas/produtos/chapinhas.md` | ✅ Lote 5 |
+| 31 | `/chapinhas/lizze-extreme-vs-supreme` | Comparativo | `pesquisas/produtos/chapinhas.md` | ✅ Lote 5 |
+| 32 | `/chapinhas/titanio-ou-ceramica` | Guia YMYL | *Conhecimento técnico (condução térmica)* | ✅ Lote 5 |
+| 33 | `/chapinhas/temperatura-ideal-chapinha` | Guia YMYL | *Conhecimento técnico (ponto de fusão)* | ✅ Lote 5 |
+| 34 | `/chapinhas/melhor-chapinha-profissional` | Pilar do Silo 2 | *Ranking das 3 acima* | ✅ Lote 5 |
 
 ### Lote 6 — Silos 3 e 4 (abrem os silos) — 8 artigos
 | # | URL | Template | Nota |
