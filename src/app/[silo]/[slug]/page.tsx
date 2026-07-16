@@ -60,12 +60,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
+import { RegulacaoBox } from '@/components/mdx/RegulacaoBox';
+import { PricingComparison } from '@/components/mdx/PricingComparison';
+import { FunnelDiagram } from '@/components/mdx/FunnelDiagram';
+
 // Mapeamento de componentes customizados disponíveis no MDX
 const mdxComponents = {
   ProsCons,
   ChemicalTable,
   ArticleHeader,
   AffiliateToast,
+  RegulacaoBox,
+  PricingComparison,
+  FunnelDiagram,
   // Todo link markdown passa pelas regras de SEO (sponsored em /go/, Link interno etc.)
   a: SmartLink,
 };
