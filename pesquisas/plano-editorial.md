@@ -14,8 +14,11 @@
 | Publicado | URL | Template | Situação |
 |---|---|---|---|
 | ✅ | `/progressivas/melhor-progressiva-sem-formol` | Pilar | **Stub de teste** — segurar (é P3/Fase 4); manter fino até a Fase 3 |
-| ✅ | `/progressivas/fashion-gold-resenha` | A · Resenha | Publicado e validado no Google. Ver ⚠️ decisão de CTA abaixo |
-| ✅ | `/progressivas/borabella-nao-chore-mais-resenha` | A · Resenha | **Stub** — é a money page nº 1: reescrever no Lote 1 |
+| ✅ | `/progressivas/fashion-gold-resenha` | A · Resenha | **Lote 1 ✔** — química corrigida (sulfito), FAQ, aviso Fashion Hair, redireciona Borabella |
+| ✅ | `/progressivas/borabella-nao-chore-mais-resenha` | A · Resenha | **Lote 1 ✔** — reescrita completa (money page destaque) |
+| ✅ | `/progressivas/prohall-select-one-resenha` | A · Resenha | **Lote 1 ✔** — resenha honesta c/ achado regulatório |
+| ✅ | `/progressivas/forever-liss-resenha` | A · Resenha | **Lote 1 ✔** — desambiguação 3D/Zero × Ingel Maxx. ⚠️ ASIN pendente (CTA via busca) |
+| ✅ | `/progressivas/mutari-progressiva-resenha` | A · Resenha | **Lote 1 ✔** — Grau 2 + glioxílico. ⚠️ ASIN pendente (CTA via busca) |
 
 Infra pronta: 4 silos registrados (`progressivas`, `chapinhas`, `chuveiro`, `cuidados`), schemas
 validados, sitemap/robots automáticos, FAQ programático, validação de frontmatter no build.

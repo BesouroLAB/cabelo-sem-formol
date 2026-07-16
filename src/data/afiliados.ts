@@ -36,6 +36,17 @@ export const LINKS_AFILIADO: Record<string, AfiliadoLink> = {
     asin: 'B09QNQFMYL', // Prancha/Chapinha Taiff Style Pro Titanium (Bivolt)
     urlBase: 'https://www.amazon.com.br/dp/B09QNQFMYL',
   },
+  // ⚠️ PENDENTES: sem ASIN verificado ainda. Interim honesto: link de BUSCA da Amazon
+  // com a tag (funciona para afiliado). Substituir por /dp/ASIN após conferir
+  // vendedor confiável, conforme playbook ("Verificar antes de CTA").
+  'forever-liss': {
+    asin: 'PENDENTE', // Forever Liss Escova Semi Definitiva 3D/Zero (linha SEM formol)
+    urlBase: 'https://www.amazon.com.br/s?k=forever+liss+semi+definitiva+3d',
+  },
+  'mutari-progress': {
+    asin: 'PENDENTE', // Redutor Reconstrutor Mutari Progress Prof
+    urlBase: 'https://www.amazon.com.br/s?k=mutari+progress+redutor',
+  },
 };
 
 /**
