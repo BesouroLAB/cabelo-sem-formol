@@ -65,15 +65,17 @@ Recomendação: manter CTA "com aviso" explicando a variação de nome + bloco d
 | 11 | `/progressivas/progressiva-organica-vs-sem-formol` | "progressiva orgânica ou sem formol diferença" | `seo/guia-alisamento-sem-formol.md` | ✅ Lote 2 |
 
 ### Lote 3 — Comparativos + recortes do Silo 1 (Templates B e C) — 7 artigos
-| # | URL | Template | Nota |
-|---|---|---|---|
-| 12 | `/progressivas/fashion-gold-vs-borabella` | B | Alta conversão; empurra para a money Borabella |
-| 13 | `/progressivas/borabella-vs-prohall-select-one` | B | Premium vs custo-benefício |
-| 14 | `/progressivas/prohall-vs-let-me-be` | B | |
-| 15 | `/progressivas/progressiva-sem-formol-cabelo-cacheado` | C | |
-| 16 | `/progressivas/progressiva-sem-formol-cabelo-crespo` | C | |
-| 17 | `/progressivas/progressiva-sem-formol-cabelo-fino` | C | Ângulo técnico: pausa/temperatura |
-| 18 | `/progressivas/progressiva-para-loiras-sem-amarelar` | C | Dor real: amarelar/chumbar |
+**LOTE 3 FINALIZADO ✔ (15/07/2026)** - Alta conversão e guias técnicos de perfis.
+
+| # | URL | Template | Nota | Status |
+|---|---|---|---|---|
+| 12 | `/progressivas/fashion-gold-vs-borabella` | B | Alta conversão; empurra para a money Borabella | ✅ Lote 3 |
+| 13 | `/progressivas/borabella-vs-prohall-select-one` | B | Premium vs custo-benefício | ✅ Lote 3 |
+| 14 | `/progressivas/prohall-vs-let-me-be` | B | | ✅ Lote 3 |
+| 15 | `/progressivas/progressiva-sem-formol-cabelo-cacheado` | C | | ✅ Lote 3 |
+| 16 | `/progressivas/progressiva-sem-formol-cabelo-crespo` | C | | ✅ Lote 3 |
+| 17 | `/progressivas/progressiva-sem-formol-cabelo-fino` | C | Ângulo técnico: pausa/temperatura | ✅ Lote 3 |
+| 18 | `/progressivas/progressiva-para-loiras-sem-amarelar` | C | Dor real: amarelar/chumbar | ✅ Lote 3 |
 
 ### Lote 4 — Autoridade + investigativos do Silo 1 — 8 artigos
 SEM CTA (exceto indicado). Todos redirecionam para a money page Borabella.
