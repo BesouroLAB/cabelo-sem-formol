@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import Link from "next/link";
 import { SITE } from "@/lib/site";
-import { getOrganizationSchema, getWebSiteSchema } from "@/lib/schema";
+import { getOrganizationSchema, getWebSiteSchema, getPersonSchema } from "@/lib/schema";
 import { JsonLd } from "@/components/seo/JsonLd";
 import "./globals.css";
 
@@ -65,6 +65,9 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col font-sans">
         <JsonLd data={getOrganizationSchema()} />
         <JsonLd data={getWebSiteSchema()} />
+        {/* Person emitido globalmente (não só em /sobre) para que @id de author/founder
+            resolva em qualquer página avaliada isoladamente pelo Rich Results Test */}
+        <JsonLd data={getPersonSchema()} />
         <header className="border-b border-gray-200 bg-white sticky top-0 z-50">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
             <Link href="/" className="font-serif font-bold text-2xl text-[#1A1A1A] tracking-tight">

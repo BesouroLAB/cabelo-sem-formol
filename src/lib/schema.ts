@@ -61,7 +61,8 @@ export function getProfilePageSchema() {
     name: `Sobre ${AUTOR_TIAGO.name} | ${SITE.name}`,
     inLanguage: SITE.language,
     isPartOf: { '@id': WEBSITE_ID },
-    mainEntity: getPersonSchema(),
+    // Referencia por @id — o Person completo já é emitido globalmente no layout raiz
+    mainEntity: { '@id': AUTHOR_ID },
   };
 }
 
@@ -101,7 +102,10 @@ export function getSiloCollectionSchema(silo: SiloConfig, articles: ArticleData[
 
 /**
  * Gera o schema principal de um artigo a partir do frontmatter:
- * - schemaType "review" + product => Review (com itemReviewed Product e nota editorial)
+ * - schemaType "review" + product => Product com `review` aninhado (padrão recomendado
+ *   pelo Google para review única — satisfaz Product [exige offers/review/aggregateRating]
+ *   e Review snippet ao mesmo tempo; NÃO usar Review->itemReviewed->Product, pois o
+ *   Product fica sem prova de review quando avaliado isoladamente pelo Rich Results Test).
  * - caso contrário => Article
  */
 export function getArticleSchema(article: ArticleData) {
@@ -109,8 +113,46 @@ export function getArticleSchema(article: ArticleData) {
   const url = absoluteUrl(`/${article.silo}/${article.slug}`);
   const image = frontmatter.image ? absoluteUrl(frontmatter.image) : undefined;
 
-  const base = {
+  const authorRef =
+    frontmatter.author === AUTOR_TIAGO.name
+      ? { '@id': AUTHOR_ID }
+      : { '@type': 'Organization', '@id': ORG_ID };
+
+  const product = frontmatter.product;
+  if (frontmatter.schemaType === 'review' && product) {
+    const productImage = image ?? (product.image ? absoluteUrl(product.image) : undefined);
+
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: product.name,
+      description: frontmatter.description,
+      url,
+      inLanguage: SITE.language,
+      ...(productImage ? { image: productImage } : {}),
+      ...(product.brand ? { brand: { '@type': 'Brand', name: product.brand } } : {}),
+      review: {
+        '@type': 'Review',
+        datePublished: new Date(frontmatter.date).toISOString(),
+        author: authorRef,
+        publisher: { '@id': ORG_ID },
+        ...(typeof product.rating === 'number'
+          ? {
+              reviewRating: {
+                '@type': 'Rating',
+                ratingValue: product.rating,
+                bestRating: 5,
+                worstRating: 0,
+              },
+            }
+          : {}),
+      },
+    };
+  }
+
+  return {
     '@context': 'https://schema.org',
+    '@type': 'Article',
     headline: frontmatter.title,
     description: frontmatter.description,
     url,
@@ -118,37 +160,8 @@ export function getArticleSchema(article: ArticleData) {
     inLanguage: SITE.language,
     datePublished: new Date(frontmatter.date).toISOString(),
     dateModified: article.lastModified.toISOString(),
-    author:
-      frontmatter.author === AUTOR_TIAGO.name
-        ? { '@id': AUTHOR_ID }
-        : { '@type': 'Organization', '@id': ORG_ID },
+    author: authorRef,
     publisher: { '@id': ORG_ID },
     ...(image ? { image } : {}),
   };
-
-  const product = frontmatter.product;
-  if (frontmatter.schemaType === 'review' && product) {
-    return {
-      ...base,
-      '@type': 'Review',
-      itemReviewed: {
-        '@type': 'Product',
-        name: product.name,
-        ...(product.brand ? { brand: { '@type': 'Brand', name: product.brand } } : {}),
-        ...(product.image ? { image: absoluteUrl(product.image) } : {}),
-      },
-      ...(typeof product.rating === 'number'
-        ? {
-            reviewRating: {
-              '@type': 'Rating',
-              ratingValue: product.rating,
-              bestRating: 5,
-              worstRating: 0,
-            },
-          }
-        : {}),
-    };
-  }
-
-  return { ...base, '@type': 'Article' };
 }
