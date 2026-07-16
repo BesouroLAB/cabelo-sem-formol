@@ -162,3 +162,22 @@ O usuário deve rodar os seguintes prompts em mecanismos de busca assistidos por
 2.  **Solicitação de Inputs:** O agente envia os 3 prompts acima e aguarda as respostas.
 3.  **Salvamento dos Dados:** As respostas são gravadas em arquivos na pasta `pesquisas/`.
 4.  **Assinatura de Entrada:** Somente após os arquivos estarem presentes na pasta `pesquisas/` o agente está autorizado a gerar a planilha de keywords e iniciar o Lote 1 de artigos.
+
+---
+
+## 8. 🤝 Protocolo de Onboarding e Setup Interativo (Gatekeeper 0)
+
+Sempre que um **novo projeto** for inicializado a partir deste template, o agente de IA **DEVE executar um fluxo de Onboarding Interativo** no chat com o usuário antes de alterar ou escrever qualquer código. 
+
+O agente iniciará a sessão fazendo as seguintes perguntas de alinhamento estratégico:
+
+1.  **O Nicho e Objetivo:** *"Qual o nicho específico deste portal de afiliados? (Ex: Cafeteiras Expresso, Smartwatches, Cuidados de Jardinagem)"*
+2.  **O Link de Afiliado (AMAZON_TAG):** *"Qual a tag de associado Amazon que configuraremos no arquivo afiliados.ts?"*
+3.  **A Persona do Autor (E-E-A-T):** *"Quem assina os artigos? Qual a sua biografia, tom de voz (científico, descontraído, profissional) e credenciais de autoridade no tema?"*
+4.  **Ingestão de Pesquisas:** *"Você já possui os dossiês e as dores reais do consumidor mapeados para alimentarmos a pasta pesquisas/? (Se o usuário não tiver, apresente os prompts da Seção 7.2)."*
+
+### Customização Dinâmica do Agente
+Com base nas respostas do usuário, o agente irá configurar automaticamente:
+*   A tag global em `src/data/afiliados.ts`.
+*   O tom de voz no sistema do agente.
+*   Uma versão personalizada do **Checklist de Validação de Conteúdo** adequado para os critérios regulatórios do novo nicho (ex: para saúde animal, citar CRMV; para eletrônicos, citar Inmetro; para cosméticos, citar Anvisa).
