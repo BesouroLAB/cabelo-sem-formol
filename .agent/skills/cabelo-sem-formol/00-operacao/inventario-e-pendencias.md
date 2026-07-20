@@ -84,11 +84,19 @@ Primeiro lote do §6 da estratégia. Build OK (70 páginas), render conferido, 0
 | 114 duelo | Ajustar | Prohall fora do páreo, CTAs Prohall removidos, claim "Grau 2" da Borabella corrigido p/ `[CONFIRMAR]` |
 | 115 duelo | Ajustar | Veredito "Vá de Prohall" → "verifique antes"; CTAs Prohall removidos; `RegulacaoBox` |
 
-### Achados abertos para os próximos lotes (não corrigidos ainda)
-- **`remark-gfm` não está instalado:** tabelas em **markdown** não renderizam (viram `|` literal). O **105 Mutari já tem uma tabela markdown quebrada no ar**. Decidir: instalar `remark-gfm` (corrige geral) OU converter tabelas para HTML como fiz no 110. → decisão do dono/dev.
-- **IN 124/2022 desatualizada** em 5 artigos fora do lote: 101, 105, 106, 109, 113 (corrigir para IN 220/2023 na revisão de cada um).
-- **113 (Fashion Gold vs Borabella):** duelo ainda não reprocessado — provável CTA/claim a ajustar como 114/115.
-- **Silo 4 (401–406):** reposicionamento "alinha, não alisa" pendente (próximo bloco natural).
+## 2º lote de reprocessamento ✅ feito em 20/07/2026
+- **`remark-gfm` instalado e configurado** (`src/app/[silo]/[slug]/page.tsx` → `MDXRemote options.mdxOptions.remarkPlugins`). Tabelas markdown passam a renderizar em todo o site; a do **105 Mutari** (que estava quebrada no ar) agora renderiza. `package.json`/`package-lock.json` atualizados.
+- **IN 124/2022 → 220/2023** corrigida em 101, 105, 106, 109, 113.
+- **113 (Fashion Gold vs Borabella)** reprocessado: Fashion Gold em tom investigativo (sem recomendação), claim "Borabella Grau 2" → `[CONFIRMAR]`, `RegulacaoBox`, **CTA quebrado `/go/borabella-kit-completo` removido**, Borabella com CTA soft.
+- **Silo 4 (401–406)** — a reposição "alinha, não alisa" **já estava feita na prosa**; fiz o cleanup de conformidade: preços em texto removidos (403, 404, 401), `RegulacaoBox` no 402, citação `RDC 07/2015` (não verificada) substituída pelo framework Grau 2, referências ao Prohall pausado trocadas por encaminhamento ao pilar, **CTA quebrado `/go/felps-chuveiro` removido** (406).
+
+Build OK (70 páginas), 0 link interno quebrado, 0 CTA quebrado no Silo 4.
+
+### Achados abertos para os próximos lotes
+- **Preços de produto/serviço em texto (padrão #3)** ainda em: 112 (`R$ 150/250/100`, serviço de salão), 123 (`R$ 10`), 130 (`R$ 400`, salão). Converter para qualitativo na revisão de cada um. *(105 Mutari — preço de produto — já corrigido em 20/07/2026.)*
+- **Reviews ⚪ sem dados** (120 Salvatore, 121 Adlux, 122 Onixx, 126 Maria Escandalosa): auditar pós-painel.
+- **Reviews 🟡 a confirmar no painel:** 104 Forever Liss, 105 Mutari, 106 Borabella, 123 Let Me Be, 124 Tyrrel (+ correção do 123 sobre menores).
+- **Linkagem reversa** dos 50 para B1/B2/110 (tríade de conformidade) — pendente.
 
 ## PENDÊNCIAS `[CONFIRMAR]` ABERTAS (do dossiê regulatório + dossiês)
 1. Texto exato do disclosure no Contrato Operacional (painel logado).
