@@ -1,0 +1,124 @@
+graph TD
+    %% ===== HUBS PRINCIPAIS =====
+    P101["101 · PILAR-MÃE<br/>Melhor Progressiva Sem Formol"]
+    P110["110 · PILAR REGULATÓRIO<br/>Tem glioxílico? (promovido)"]
+    B1["B1 · Tutorial Painel Anvisa<br/>(hub de verificação)"]
+    B2["B2 · Teste de Mecha<br/>(hub de segurança)"]
+    H208["208 · HUB Chapinhas"]
+    H301["301 · HUB Pós-Química"]
+    H406["406 · HUB Chuveiro"]
+
+    %% ===== A TRIADE DE CONFORMIDADE =====
+    P110 <--> B1
+    P110 <--> P101
+    B1 -.linkado por todo review.-> P110
+
+    %% ===== SILO 1: REVIEWS =====
+    subgraph S1["SILO 1 · PROGRESSIVAS"]
+        R104["104 · Forever Liss 🟢"]
+        R105["105 · Mutari 🟡"]
+        R106["106 · Borabella 🟡"]
+        R123["123 · Let Me Be 🟡"]
+        R102["102 · Fashion Gold ⚠️"]
+        R103["103 · Prohall 🔴"]
+        R125["125 · Japinha 🔴 ALERTA"]
+        DUELOS["113·114·115 Duelos"]
+        TECH["107·108·109·111·112 Dúvidas"]
+        TIPOS["116·117·118·119·129·130 Tipos"]
+    end
+
+    %% Reviews -> triade
+    R104 --> P110 & B1 & B2
+    R105 --> P110 & B1
+    R106 --> P110 & B1
+    R123 --> P110 & B1 & B2
+    R102 --> P110 & B1
+    R103 --> P110 & B1
+    R125 --> P110 & B1
+    DUELOS --> P110 & B1
+    TIPOS --> P101
+
+    %% Pilar distribui
+    P101 --> R104 & R105 & TIPOS
+    P110 --> R105 & R125 & R106
+
+    %% Caso especial alerta
+    R125 -.zero afiliado.-> P110
+
+    %% ===== NOVOS BACKLOG =====
+    subgraph NEW["NOVOS (Backlog)"]
+        B3["B3 · Infantil (proteção)"]
+        B4["B4 · Aplicar em casa (HowTo)"]
+        B5["B5 · Descoloração+intervalo"]
+        B6["B6 · Alinhar × Alisar"]
+        B7["B7 · Grisalho"]
+        B8["B8 · Masculino"]
+        B9["B9 · Protetor térmico"]
+    end
+
+    B2 --> B4
+    B4 --> B2 & B1 & H208
+    B5 --> B2
+    B6 --> H406
+    B8 --> P101 & B1
+    B7 --> B2
+
+    %% ===== SILO 2: CHAPINHAS =====
+    subgraph S2["SILO 2 · CHAPINHAS"]
+        R201["201 Lizze Extreme"]
+        R202["202 MQ Pro 480"]
+        R204["204 Duelo Lizze×MQ"]
+        R207["207 Temperatura"]
+        R209["209 Chapinha fino"]
+    end
+    R201 --> H208 & R204
+    R202 --> H208 & R204
+    R207 --> R209
+    B9 --> R207
+    H208 --> R201 & R202 & R207
+
+    %% ===== SILO 3: POS =====
+    subgraph S3["SILO 3 · PÓS-QUÍMICA"]
+        R302["302 Durar mais"]
+        R303["303 O que não pode"]
+        R304["304 Shampoo s/ sulfato"]
+    end
+    H301 --> R302 & R303 & R304
+    R302 --> R304
+
+    %% Todo review -> pós (recorrencia)
+    R104 -.manutenção.-> H301
+    R105 -.manutenção.-> H301
+    B4 -.pós.-> H301
+
+    %% ===== SILO 4: CHUVEIRO =====
+    subgraph S4["SILO 4 · CHUVEIRO (reposicionado)"]
+        R401["401 Hidraliso"]
+        R404["404 La Bella Liss"]
+        R402["402 Alisa mesmo?"]
+    end
+    H406 --> R401 & R404 & R402
+    R402 --> P101
+    H406 -.alternativa.-> P101
+    B6 --> H406
+
+    %% ===== CROSS-SILO =====
+    P101 -.selar.-> H208
+    P101 -.manutenção.-> H301
+    TIPOS -.fino.-> R209
+    TIPOS -.cacheada.-> H406
+
+    %% ===== ESTILOS =====
+    classDef pilar fill:#2d6a4f,stroke:#1b4332,color:#fff,stroke-width:3px
+    classDef hub fill:#40916c,stroke:#2d6a4f,color:#fff,stroke-width:2px
+    classDef alerta fill:#9d0208,stroke:#6a040f,color:#fff,stroke-width:2px
+    classDef amarelo fill:#e9c46a,stroke:#e76f51,color:#000
+    classDef verde fill:#95d5b2,stroke:#52b788,color:#000
+    classDef novo fill:#48cae4,stroke:#0096c7,color:#000
+
+    class P101,P110 pilar
+    class B1,B2,H208,H301,H406 hub
+    class R125,R103 alerta
+    class R105,R106,R123,R102 amarelo
+    class R104 verde
+    class B3,B4,B5,B6,B7,B8,B9 novo
