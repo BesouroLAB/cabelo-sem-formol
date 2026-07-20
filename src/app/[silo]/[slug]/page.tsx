@@ -6,6 +6,7 @@ import { getArticleSchema, getBreadcrumbSchema, getFaqSchema } from '@/lib/schem
 import { FaqSection } from '@/components/mdx/FaqSection';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { MDXRemote } from 'next-mdx-remote/rsc';
+import remarkGfm from 'remark-gfm';
 import { notFound } from 'next/navigation';
 import { ProsCons } from '@/components/mdx/ProsCons';
 import { ChemicalTable } from '@/components/mdx/ChemicalTable';
@@ -108,7 +109,11 @@ export default async function ArticlePage({ params }: PageProps) {
       </nav>
 
       <div className="prose prose-lg max-w-none prose-headings:font-serif prose-a:text-[#C2A878] prose-a:no-underline hover:prose-a:underline">
-        <MDXRemote source={article.content} components={mdxComponents} />
+        <MDXRemote
+          source={article.content}
+          components={mdxComponents}
+          options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+        />
       </div>
 
       {/* FAQ visível espelhando o schema FAQPage (mesma fonte de dados: frontmatter.faq) */}
