@@ -15,11 +15,11 @@ export const ArticleHeader: React.FC<ArticleHeaderProps> = ({ title, author, dat
       <div className="flex items-center text-sm text-gray-600 font-sans">
         <div className="flex items-center">
           <div className="w-10 h-10 rounded-full bg-gray-200 mr-3 flex items-center justify-center overflow-hidden">
-            <span className="font-bold text-gray-500">TF</span>
+            <img src="/autor/tiago-perfil.jpg" alt={author} className="w-full h-full object-cover" />
           </div>
           <div>
             <p className="font-bold text-[#1A1A1A]">{author}</p>
-            <p>Especialista em Cosméticos e UX</p>
+            <p>Pesquisador Independente & Especialista em UX</p>
           </div>
         </div>
         <div className="ml-auto flex items-center gap-2">

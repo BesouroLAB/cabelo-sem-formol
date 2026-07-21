@@ -1,0 +1,14 @@
+# Cabelo Sem Formol
+
+> Portal investigativo de saúde capilar: dossiês químicos, análises de INCI e resenhas honestas das melhores progressivas sem formol do mercado.
+
+## Silos de Conteúdo
+
+- [/progressivas](/progressivas): Dossiês, comparativos e resenhas honestas de progressivas sem formol (Borabella, Prohall, Salvatore, Mutari, etc.).
+- [/chapinhas](/chapinhas): Análises técnicas de chapinhas profissionais (Lizze, MQ, etc.) para progressiva.
+- [/chuveiro](/chuveiro): Investigações sobre progressivas de chuveiro (Hidraliso, La Bella Liss) e se funcionam mesmo.
+- [/cuidados](/cuidados): Guias práticos pós-progressiva (cronograma, shampoos sem sulfato, acidificação) para fazer o liso durar mais.
+
+## Outras Páginas
+
+- [/sobre](/sobre): Quem somos e o compromisso editorial liderado por Tiago Fernandes.

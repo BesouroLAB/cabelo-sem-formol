@@ -60,23 +60,26 @@ export default function RootLayout({
   return (
     <html
       lang={SITE.language}
-      className={`${inter.variable} ${playfair.variable} h-full antialiased`}
+      className={`${inter.variable} ${playfair.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col font-sans">
+      <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
         <JsonLd data={getOrganizationSchema()} />
         <JsonLd data={getWebSiteSchema()} />
         {/* Person emitido globalmente (não só em /sobre) para que @id de author/founder
             resolva em qualquer página avaliada isoladamente pelo Rich Results Test */}
         <JsonLd data={getPersonSchema()} />
         <header className="border-b border-gray-200 bg-white sticky top-0 z-50">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-            <Link href="/" className="font-serif font-bold text-2xl text-[#1A1A1A] tracking-tight">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 min-h-16 flex flex-col sm:flex-row items-center justify-between py-2 sm:py-0">
+            <Link href="/" className="font-serif font-bold text-2xl text-[#1A1A1A] tracking-tight mb-2 sm:mb-0">
               Cabelo<span className="text-[#C2A878]">SemFormol</span>
             </Link>
-            <nav className="hidden sm:flex items-center gap-6 text-sm font-semibold text-gray-600">
-              <Link href="/progressivas/melhor-progressiva-sem-formol" className="hover:text-[#C2A878] transition-colors">Ranking 2026</Link>
-              <Link href="/progressivas" className="hover:text-[#C2A878] transition-colors">Progressivas</Link>
-              <Link href="/sobre" className="hover:text-[#C2A878] transition-colors">Sobre</Link>
+            <nav className="flex items-center gap-4 sm:gap-6 text-sm font-semibold text-gray-600 overflow-x-auto w-full sm:w-auto pb-1 sm:pb-0 scrollbar-hide">
+              <Link href="/progressivas/melhor-progressiva-sem-formol" className="hover:text-[#C2A878] transition-colors whitespace-nowrap">Ranking 2026</Link>
+              <Link href="/progressivas" className="hover:text-[#C2A878] transition-colors whitespace-nowrap">Progressivas</Link>
+              <Link href="/chapinhas" className="hover:text-[#C2A878] transition-colors whitespace-nowrap">Chapinhas</Link>
+              <Link href="/chuveiro" className="hover:text-[#C2A878] transition-colors whitespace-nowrap">Chuveiro</Link>
+              <Link href="/cuidados" className="hover:text-[#C2A878] transition-colors whitespace-nowrap">Pós-Química</Link>
+              <Link href="/sobre" className="hover:text-[#C2A878] transition-colors whitespace-nowrap">Sobre</Link>
             </nav>
           </div>
         </header>

@@ -1,11 +1,21 @@
 import { CheckCircle2, XCircle } from 'lucide-react';
 
 interface ProsConsProps {
-  pros: string[];
-  contras: string[];
+  pros: string[] | string;
+  contras: string[] | string;
 }
 
 export function ProsCons({ pros = [], contras = [] }: ProsConsProps) {
+  console.log('ProsCons rendered with:', { pros, contras });
+
+  const listPros = typeof pros === 'string'
+    ? pros.split('|').map(s => s.trim()).filter(Boolean)
+    : pros;
+
+  const listContras = typeof contras === 'string'
+    ? contras.split('|').map(s => s.trim()).filter(Boolean)
+    : contras;
+
   return (
     <div className="grid md:grid-cols-2 gap-6 my-8 not-prose">
       {/* Coluna de Prós */}
@@ -15,7 +25,7 @@ export function ProsCons({ pros = [], contras = [] }: ProsConsProps) {
           O que gostamos
         </h3>
         <ul className="space-y-3">
-          {pros.map((pro, idx) => (
+          {listPros.map((pro, idx) => (
             <li key={idx} className="flex items-start">
               <span className="text-emerald-500 mr-2 mt-1 font-bold">•</span>
               <span className="text-emerald-900 leading-snug">{pro}</span>
@@ -31,7 +41,7 @@ export function ProsCons({ pros = [], contras = [] }: ProsConsProps) {
           O que poderia ser melhor
         </h3>
         <ul className="space-y-3">
-          {contras.map((contra, idx) => (
+          {listContras.map((contra, idx) => (
             <li key={idx} className="flex items-start">
               <span className="text-rose-500 mr-2 mt-1 font-bold">•</span>
               <span className="text-rose-900 leading-snug">{contra}</span>

@@ -4,7 +4,7 @@ interface ChemicalTableProps {
   activeIngredient: string;
   anvisaStatus: string;
   riskLevel: 'Baixo' | 'Médio' | 'Alto';
-  formaldehydeFree: boolean;
+  formaldehydeFree: boolean | string;
 }
 
 export const ChemicalTable: React.FC<ChemicalTableProps> = ({ 
@@ -13,6 +13,9 @@ export const ChemicalTable: React.FC<ChemicalTableProps> = ({
   riskLevel, 
   formaldehydeFree 
 }) => {
+  const isLivre = typeof formaldehydeFree === 'string'
+    ? formaldehydeFree.toLowerCase() === 'true'
+    : !!formaldehydeFree;
   const getRiskColor = (level: string) => {
     switch(level) {
       case 'Baixo': return 'bg-green-100 text-green-800';
@@ -51,7 +54,7 @@ export const ChemicalTable: React.FC<ChemicalTableProps> = ({
             <tr>
               <td className="py-3 px-4 font-semibold text-gray-600 bg-gray-50">Livre de Formol?</td>
               <td className="py-3 px-4">
-                {formaldehydeFree ? (
+                {isLivre ? (
                   <span className="flex items-center text-green-700 font-bold">
                     <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
                     Sim (Comprovado)
